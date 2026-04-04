@@ -1,18 +1,42 @@
 import SEOPageLayout, { GYG } from "@/components/SEOPageLayout";
 import { Phone, Smartphone, MapPin, CheckCircle, Clock } from "lucide-react";
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://bookmelbournetaxi.com" },
+    { "@type": "ListItem", position: 2, name: "How to Book a Taxi", item: "https://bookmelbournetaxi.com/how-to-book-taxi-melbourne" },
+  ],
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How to Book a Taxi in Melbourne",
+  description: "Step-by-step guide to booking a taxi in Melbourne by app, phone, street hail, or online.",
+  step: [
+    { "@type": "HowToStep", position: 1, name: "Book via App", text: "Download 13CABS or Silver Top app, enter pickup and destination, confirm booking and track your driver in real time." },
+    { "@type": "HowToStep", position: 2, name: "Call to Book", text: "Phone 13CABS (13 22 27) or Silver Top (13 10 08). Provide pickup address, destination, and preferred time." },
+    { "@type": "HowToStep", position: 3, name: "Hail or Use a Taxi Rank", text: "In the CBD, hail a vacant taxi with a lit roof sign, or go to a designated taxi rank at train stations and shopping centres." },
+    { "@type": "HowToStep", position: 4, name: "Pre-Book Online", text: "Visit 13cabs.com.au or silvertop.com.au to schedule a booking up to 7 days in advance." },
+  ],
+};
+
 const HowToBookTaxi = () => (
   <SEOPageLayout
     title="How to Book a Taxi in Melbourne"
     subtitle="Step-by-step guide to booking a taxi in Melbourne — by app, phone, online or from a rank. All the options compared."
+    metaTitle="How to Book a Taxi in Melbourne — 4 Easy Ways (2026 Guide)"
+    metaDescription="Learn how to book a Melbourne taxi by app, phone, rank, or online. Compare 13CABS, Silver Top & more. Tips for airport transfers and peak-hour bookings."
+    slug="how-to-book-taxi-melbourne"
     bookLink={`https://www.getyourguide.com/melbourne-l169/airport-transfer-t1/?partner_id=${GYG}&utm_medium=online_publisher`}
+    jsonLd={[breadcrumbSchema, howToSchema]}
   >
     <section className="py-16 bg-background">
       <div className="container">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">
-            4 Ways to Book a Melbourne Taxi
-          </h2>
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">4 Ways to Book a Melbourne Taxi</h2>
 
           <div className="space-y-8 mb-12">
             {[
@@ -47,9 +71,7 @@ const HowToBookTaxi = () => (
             ))}
           </div>
 
-          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">
-            Melbourne Taxi Companies
-          </h2>
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Melbourne Taxi Companies</h2>
           <div className="bg-card border border-border rounded-lg overflow-hidden mb-8">
             <table className="w-full text-sm font-body">
               <thead className="bg-muted">
@@ -68,9 +90,7 @@ const HowToBookTaxi = () => (
             </table>
           </div>
 
-          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">
-            Booking Tips
-          </h2>
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Booking Tips</h2>
           <ul className="space-y-3">
             {[
               "Book at least 15–30 minutes before you need to leave, especially during peak hours",

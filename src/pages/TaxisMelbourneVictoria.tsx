@@ -1,18 +1,29 @@
 import SEOPageLayout, { GYG } from "@/components/SEOPageLayout";
 import { MapPin, CheckCircle, Phone } from "lucide-react";
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://bookmelbournetaxi.com" },
+    { "@type": "ListItem", position: 2, name: "Taxis Melbourne Victoria", item: "https://bookmelbournetaxi.com/taxis-melbourne-victoria" },
+  ],
+};
+
 const TaxisMelbourneVictoria = () => (
   <SEOPageLayout
     title="Taxis Melbourne Victoria"
     subtitle="Everything you need to know about taxi services across Melbourne and Victoria, Australia. Companies, fares, regulations, and booking options."
+    metaTitle="Taxis Melbourne Victoria — Companies, Fares & Booking Guide 2026"
+    metaDescription="Complete guide to taxi services in Melbourne & Victoria. Compare taxi companies (13CABS, Silver Top), fare rates, regulations, and tips for visitors and locals."
+    slug="taxis-melbourne-victoria"
     bookLink={`https://www.getyourguide.com/melbourne-l169/?partner_id=${GYG}&utm_medium=online_publisher`}
+    jsonLd={[breadcrumbSchema]}
   >
     <section className="py-16 bg-background">
       <div className="container">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">
-            Taxi Services in Melbourne, Victoria
-          </h2>
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Taxi Services in Melbourne, Victoria</h2>
           <p className="font-body text-muted-foreground mb-4 leading-relaxed">
             Melbourne, the capital of <strong>Victoria, Australia</strong>, has one of the most comprehensive 
             taxi networks in the country. Licensed taxis operate across the Greater Melbourne area and regional 
@@ -20,9 +31,7 @@ const TaxisMelbourneVictoria = () => (
             the <strong>Commercial Passenger Vehicles Victoria (CPVV)</strong>.
           </p>
 
-          <h2 className="text-3xl font-heading font-bold text-foreground mb-6 mt-10">
-            Major Melbourne Taxi Companies
-          </h2>
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6 mt-10">Major Melbourne Taxi Companies</h2>
           <div className="grid md:grid-cols-2 gap-4 mb-8">
             {[
               { name: "13CABS", phone: "13 2227", desc: "Australia's largest taxi network. Available via app, phone, or street hail." },
@@ -40,9 +49,7 @@ const TaxisMelbourneVictoria = () => (
             ))}
           </div>
 
-          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">
-            Melbourne Taxi Fare Guide
-          </h2>
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Melbourne Taxi Fare Guide</h2>
           <p className="font-body text-muted-foreground mb-4 leading-relaxed">
             All Melbourne taxis use calibrated meters. The fare structure is set by the Victorian Government 
             and applies to all licensed taxi services:
@@ -67,9 +74,7 @@ const TaxisMelbourneVictoria = () => (
             </table>
           </div>
 
-          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">
-            Popular Taxi Routes in Melbourne
-          </h2>
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Popular Taxi Routes in Melbourne</h2>
           <div className="space-y-3 mb-8">
             {[
               { route: "Melbourne Airport → CBD", fare: "$55–$75", time: "25–40 min" },
@@ -92,9 +97,7 @@ const TaxisMelbourneVictoria = () => (
             ))}
           </div>
 
-          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">
-            Tips for Taking Taxis in Melbourne
-          </h2>
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Tips for Taking Taxis in Melbourne</h2>
           <ul className="space-y-3 mb-8">
             {[
               "All licensed taxis display a rooftop sign and driver ID — check before entering",
@@ -112,9 +115,7 @@ const TaxisMelbourneVictoria = () => (
             ))}
           </ul>
 
-          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">
-            Regional Victoria Taxi Services
-          </h2>
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Regional Victoria Taxi Services</h2>
           <p className="font-body text-muted-foreground mb-4 leading-relaxed">
             Taxi services extend beyond Melbourne to regional Victoria cities including <strong>Geelong</strong>, 
             <strong> Ballarat</strong>, <strong>Bendigo</strong>, and the <strong>Mornington Peninsula</strong>. 

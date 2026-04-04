@@ -1,12 +1,21 @@
 import { useState } from "react";
 import SEOPageLayout, { GYG } from "@/components/SEOPageLayout";
-import { Calculator, DollarSign, Clock, MapPin, CheckCircle } from "lucide-react";
+import { Calculator, CheckCircle } from "lucide-react";
 
 const FLAGFALL = 4.2;
 const RATE_DAY = 1.62;
 const RATE_NIGHT = 1.8;
 const AIRPORT_SURCHARGE = 3.5;
 const BOOKING_FEE = 2.0;
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://bookmelbournetaxi.com" },
+    { "@type": "ListItem", position: 2, name: "Taxi Fare Calculator", item: "https://bookmelbournetaxi.com/taxi-fare-calculator-melbourne" },
+  ],
+};
 
 const TaxiFareCalculator = () => {
   const [distance, setDistance] = useState(15);
@@ -21,7 +30,11 @@ const TaxiFareCalculator = () => {
     <SEOPageLayout
       title="Taxi Fare Calculator Melbourne"
       subtitle="Estimate your Melbourne taxi fare instantly. Enter your distance and conditions to get an accurate fare breakdown."
+      metaTitle="Taxi Fare Calculator Melbourne — Estimate Your Cab Fare Instantly"
+      metaDescription="Calculate Melbourne taxi fares online. Enter distance, time of day, and surcharges to get an instant estimate. Includes fare breakdown and common route prices."
+      slug="taxi-fare-calculator-melbourne"
       bookLink={`https://www.getyourguide.com/melbourne-l169/airport-transfer-t1/?partner_id=${GYG}&utm_medium=online_publisher`}
+      jsonLd={[breadcrumbSchema]}
     >
       <section className="py-16 bg-background">
         <div className="container">
@@ -84,9 +97,7 @@ const TaxiFareCalculator = () => {
             </div>
 
             {/* Common Routes */}
-            <h2 className="text-3xl font-heading font-bold text-foreground mb-6">
-              Common Route Estimates
-            </h2>
+            <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Common Route Estimates</h2>
             <div className="bg-card border border-border rounded-lg overflow-hidden mb-12">
               <table className="w-full text-sm font-body">
                 <thead className="bg-muted">
@@ -119,9 +130,7 @@ const TaxiFareCalculator = () => {
             </div>
 
             {/* How fares work */}
-            <h2 className="text-3xl font-heading font-bold text-foreground mb-6">
-              How Melbourne Taxi Fares Work
-            </h2>
+            <h2 className="text-3xl font-heading font-bold text-foreground mb-6">How Melbourne Taxi Fares Work</h2>
             <p className="font-body text-muted-foreground mb-4 leading-relaxed">
               Melbourne taxi fares are regulated by the <strong>Victorian Government</strong> through the Commercial Passenger
               Vehicles Victoria (CPVV). All licensed taxis use calibrated meters that calculate fares based on a combination

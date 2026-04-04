@@ -1,11 +1,24 @@
 import SEOPageLayout, { GYG } from "@/components/SEOPageLayout";
 import { MapPin, Clock, DollarSign, CheckCircle, Car } from "lucide-react";
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://bookmelbournetaxi.com" },
+    { "@type": "ListItem", position: 2, name: "Melbourne Taxi CBD", item: "https://bookmelbournetaxi.com/melbourne-taxi-cbd" },
+  ],
+};
+
 const MelbourneTaxiCBD = () => (
   <SEOPageLayout
     title="Melbourne Taxi CBD"
     subtitle="Everything you need to know about catching a taxi in Melbourne's Central Business District — ranks, fares, peak hours and insider tips."
+    metaTitle="Melbourne Taxi CBD — Taxi Ranks, Fares & Tips for the City Centre"
+    metaDescription="Find taxis in Melbourne CBD easily. 50+ taxi ranks, fare guide from $4.20 flagfall, night-safe ranks, and tips for getting around the city centre by cab."
+    slug="melbourne-taxi-cbd"
     bookLink={`https://www.getyourguide.com/melbourne-l169/airport-transfer-t1/?partner_id=${GYG}&utm_medium=online_publisher`}
+    jsonLd={[breadcrumbSchema]}
   >
     <section className="py-16 bg-background">
       <div className="container">
@@ -24,9 +37,7 @@ const MelbourneTaxiCBD = () => (
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">
-            Finding a Taxi in Melbourne CBD
-          </h2>
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Finding a Taxi in Melbourne CBD</h2>
           <p className="font-body text-muted-foreground mb-4 leading-relaxed">
             Melbourne's CBD has over <strong>50 dedicated taxi ranks</strong> located outside major hotels, train stations,
             shopping centres, and entertainment precincts. Key locations include <strong>Flinders Street Station</strong>,
@@ -38,9 +49,7 @@ const MelbourneTaxiCBD = () => (
             and Saturday nights.
           </p>
 
-          <h2 className="text-3xl font-heading font-bold text-foreground mb-6 mt-10">
-            CBD Taxi Fare Guide
-          </h2>
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6 mt-10">CBD Taxi Fare Guide</h2>
           <div className="bg-card border border-border rounded-lg overflow-hidden mb-8">
             <table className="w-full text-sm font-body">
               <thead className="bg-muted">
@@ -59,9 +68,7 @@ const MelbourneTaxiCBD = () => (
             </table>
           </div>
 
-          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">
-            Tips for CBD Taxi Travel
-          </h2>
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Tips for CBD Taxi Travel</h2>
           <ul className="space-y-3 mb-8">
             {[
               "Use official taxi ranks — they're marked with blue signs throughout the CBD",
@@ -78,9 +85,7 @@ const MelbourneTaxiCBD = () => (
             ))}
           </ul>
 
-          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">
-            Popular CBD Taxi Rank Locations
-          </h2>
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Popular CBD Taxi Rank Locations</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {[
               { name: "Flinders Street Station", detail: "Elizabeth St entrance, 24/7" },
