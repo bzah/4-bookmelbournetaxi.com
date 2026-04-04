@@ -7,6 +7,9 @@ import Index from "./pages/Index.tsx";
 import AirportToCBD from "./pages/AirportToCBD.tsx";
 import MaxiTaxi from "./pages/MaxiTaxi.tsx";
 import TaxisMelbourneVictoria from "./pages/TaxisMelbourneVictoria.tsx";
+import MelbourneTaxiCBD from "./pages/MelbourneTaxiCBD.tsx";
+import HowToBookTaxi from "./pages/HowToBookTaxi.tsx";
+import TaxiFareCalculator from "./pages/TaxiFareCalculator.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
