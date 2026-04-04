@@ -1,4 +1,5 @@
-import { Car, Plane, MapPin, Clock } from "lucide-react";
+import { Car, Plane, MapPin, Clock, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const routes = [
   {
@@ -99,6 +100,17 @@ const TaxiRoutesSection = () => (
             </p>
           </div>
         ))}
+      </div>
+      <div className="flex flex-wrap justify-center gap-4 mt-10">
+        <Link to="/taxi-melbourne-airport-to-cbd" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-body font-semibold hover:opacity-90 transition-opacity">
+          Airport to CBD Guide <ArrowRight className="w-4 h-4" />
+        </Link>
+        <Link to="/maxi-taxi-melbourne" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground font-body font-semibold hover:bg-muted transition-colors">
+          Maxi Taxi Melbourne <ArrowRight className="w-4 h-4" />
+        </Link>
+        <Link to="/taxis-melbourne-victoria" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground font-body font-semibold hover:bg-muted transition-colors">
+          Taxis Melbourne Victoria <ArrowRight className="w-4 h-4" />
+        </Link>
       </div>
     </div>
   </section>
