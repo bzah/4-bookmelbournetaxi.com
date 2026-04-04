@@ -25,6 +25,9 @@ const App = () => (
           <Route path="/taxi-melbourne-airport-to-cbd" element={<AirportToCBD />} />
           <Route path="/maxi-taxi-melbourne" element={<MaxiTaxi />} />
           <Route path="/taxis-melbourne-victoria" element={<TaxisMelbourneVictoria />} />
+          <Route path="/melbourne-taxi-cbd" element={<MelbourneTaxiCBD />} />
+          <Route path="/how-to-book-taxi-melbourne" element={<HowToBookTaxi />} />
+          <Route path="/taxi-fare-calculator-melbourne" element={<TaxiFareCalculator />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
