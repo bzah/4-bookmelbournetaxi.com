@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import MelbourneInfoWidget from "@/components/MelbourneInfoWidget";
 import TaxiRoutesSection from "@/components/TaxiRoutesSection";
 import AttractionsSection from "@/components/AttractionsSection";
 import ToursSection from "@/components/ToursSection";
@@ -11,6 +12,7 @@ const Index = () => (
     <Navbar />
     <main>
       <HeroSection />
+      <MelbourneInfoWidget />
       <TaxiRoutesSection />
       <AttractionsSection />
       <ToursSection />
