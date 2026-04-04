@@ -1,7 +1,7 @@
 const Footer = () => (
   <footer className="bg-secondary py-12">
     <div className="container">
-      <div className="grid md:grid-cols-3 gap-8 mb-8">
+      <div className="grid md:grid-cols-4 gap-8 mb-8">
         <div>
           <h3 className="font-heading font-bold text-lg text-primary-foreground mb-3">
             🇦🇺 BookMelbourneTaxi.com
@@ -13,21 +13,30 @@ const Footer = () => (
         <div>
           <h4 className="font-heading font-semibold text-primary-foreground mb-3">Quick Links</h4>
           <ul className="space-y-2 font-body text-sm text-primary-foreground/60">
-            <li><a href="#taxi-routes" className="hover:text-primary transition-colors">Taxi Routes & Fares</a></li>
-            <li><a href="#attractions" className="hover:text-primary transition-colors">Melbourne Attractions</a></li>
-            <li><a href="#tours" className="hover:text-primary transition-colors">Book Tours</a></li>
-            <li><a href="#faq" className="hover:text-primary transition-colors">FAQ</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-heading font-semibold text-primary-foreground mb-3">Popular Searches</h4>
-          <ul className="space-y-2 font-body text-sm text-primary-foreground/60">
-            <li><a href="/taxi-melbourne-airport-to-cbd" className="hover:text-primary transition-colors">Melbourne Airport to CBD Taxi</a></li>
+            <li><a href="/taxi-melbourne-airport-to-cbd" className="hover:text-primary transition-colors">Airport to CBD Taxi</a></li>
             <li><a href="/maxi-taxi-melbourne" className="hover:text-primary transition-colors">Maxi Taxi Melbourne</a></li>
             <li><a href="/taxis-melbourne-victoria" className="hover:text-primary transition-colors">Taxis Melbourne Victoria</a></li>
             <li><a href="/melbourne-taxi-cbd" className="hover:text-primary transition-colors">Melbourne Taxi CBD</a></li>
             <li><a href="/how-to-book-taxi-melbourne" className="hover:text-primary transition-colors">How to Book a Taxi</a></li>
             <li><a href="/taxi-fare-calculator-melbourne" className="hover:text-primary transition-colors">Taxi Fare Calculator</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-heading font-semibold text-primary-foreground mb-3">Company</h4>
+          <ul className="space-y-2 font-body text-sm text-primary-foreground/60">
+            <li><a href="/about" className="hover:text-primary transition-colors">About Us</a></li>
+            <li><a href="/contact" className="hover:text-primary transition-colors">Contact</a></li>
+            <li><a href="/parents-info" className="hover:text-primary transition-colors">Parents Info</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-heading font-semibold text-primary-foreground mb-3">Legal</h4>
+          <ul className="space-y-2 font-body text-sm text-primary-foreground/60">
+            <li><a href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</a></li>
+            <li><a href="/terms-of-service" className="hover:text-primary transition-colors">Terms of Service</a></li>
+            <li><a href="/cookie-policy" className="hover:text-primary transition-colors">Cookie Policy</a></li>
+            <li><a href="/dmca" className="hover:text-primary transition-colors">DMCA</a></li>
+            <li><a href="/legal-notice" className="hover:text-primary transition-colors">Legal Notice</a></li>
           </ul>
         </div>
       </div>

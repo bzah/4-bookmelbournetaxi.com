@@ -10,6 +10,14 @@ import TaxisMelbourneVictoria from "./pages/TaxisMelbourneVictoria.tsx";
 import MelbourneTaxiCBD from "./pages/MelbourneTaxiCBD.tsx";
 import HowToBookTaxi from "./pages/HowToBookTaxi.tsx";
 import TaxiFareCalculator from "./pages/TaxiFareCalculator.tsx";
+import AboutUs from "./pages/AboutUs.tsx";
+import ContactUs from "./pages/ContactUs.tsx";
+import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
+import TermsOfService from "./pages/TermsOfService.tsx";
+import CookiePolicy from "./pages/CookiePolicy.tsx";
+import DMCA from "./pages/DMCA.tsx";
+import LegalNotice from "./pages/LegalNotice.tsx";
+import ParentsInfo from "./pages/ParentsInfo.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -28,6 +36,14 @@ const App = () => (
           <Route path="/melbourne-taxi-cbd" element={<MelbourneTaxiCBD />} />
           <Route path="/how-to-book-taxi-melbourne" element={<HowToBookTaxi />} />
           <Route path="/taxi-fare-calculator-melbourne" element={<TaxiFareCalculator />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/dmca" element={<DMCA />} />
+          <Route path="/legal-notice" element={<LegalNotice />} />
+          <Route path="/parents-info" element={<ParentsInfo />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
