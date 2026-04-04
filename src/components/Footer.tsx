@@ -25,8 +25,9 @@ const Footer = () => (
             <li><a href="/taxi-melbourne-airport-to-cbd" className="hover:text-primary transition-colors">Melbourne Airport to CBD Taxi</a></li>
             <li><a href="/maxi-taxi-melbourne" className="hover:text-primary transition-colors">Maxi Taxi Melbourne</a></li>
             <li><a href="/taxis-melbourne-victoria" className="hover:text-primary transition-colors">Taxis Melbourne Victoria</a></li>
-            <li><a href="/" className="hover:text-primary transition-colors">Taxi Melbourne</a></li>
-            <li><a href="#taxi-routes" className="hover:text-primary transition-colors">Melbourne Taxi Fares</a></li>
+            <li><a href="/melbourne-taxi-cbd" className="hover:text-primary transition-colors">Melbourne Taxi CBD</a></li>
+            <li><a href="/how-to-book-taxi-melbourne" className="hover:text-primary transition-colors">How to Book a Taxi</a></li>
+            <li><a href="/taxi-fare-calculator-melbourne" className="hover:text-primary transition-colors">Taxi Fare Calculator</a></li>
           </ul>
         </div>
       </div>
