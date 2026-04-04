@@ -1,18 +1,30 @@
 import { ReactNode } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 
 const GYG = "0IQTGX8";
+const BASE = "https://bookmelbournetaxi.com";
 
 interface SEOPageLayoutProps {
   title: string;
   subtitle: string;
   children: ReactNode;
   bookLink?: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  slug?: string;
+  jsonLd?: object[];
 }
 
-const SEOPageLayout = ({ title, subtitle, children, bookLink }: SEOPageLayoutProps) => (
+const SEOPageLayout = ({ title, subtitle, children, bookLink, metaTitle, metaDescription, slug, jsonLd }: SEOPageLayoutProps) => (
   <>
+    <SEOHead
+      title={metaTitle || `${title} | BookMelbourneTaxi.com`}
+      description={metaDescription || subtitle}
+      canonical={slug ? `${BASE}/${slug}` : BASE}
+      jsonLd={jsonLd}
+    />
     <Navbar />
     <main>
       <section className="pt-24 pb-16 bg-navy-gradient">
@@ -37,5 +49,5 @@ const SEOPageLayout = ({ title, subtitle, children, bookLink }: SEOPageLayoutPro
   </>
 );
 
-export { GYG };
+export { GYG, BASE };
 export default SEOPageLayout;

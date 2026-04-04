@@ -1,11 +1,24 @@
 import SEOPageLayout, { GYG } from "@/components/SEOPageLayout";
 import { Users, CheckCircle, Car } from "lucide-react";
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://bookmelbournetaxi.com" },
+    { "@type": "ListItem", position: 2, name: "Maxi Taxi Melbourne", item: "https://bookmelbournetaxi.com/maxi-taxi-melbourne" },
+  ],
+};
+
 const MaxiTaxi = () => (
   <SEOPageLayout
     title="Maxi Taxi Melbourne"
     subtitle="Need a larger vehicle? Book a maxi taxi in Melbourne for groups, families, and airport transfers. Seats up to 11 passengers with luggage space."
+    metaTitle="Maxi Taxi Melbourne — Book Large Taxi for Groups & Airport Transfers"
+    metaDescription="Book a maxi taxi in Melbourne for up to 11 passengers. Compare maxi cab fares for airport transfers, group travel, and wheelchair-accessible vehicles."
+    slug="maxi-taxi-melbourne"
     bookLink={`https://www.getyourguide.com/melbourne-l169/airport-transfer-t1/?partner_id=${GYG}&utm_medium=online_publisher`}
+    jsonLd={[breadcrumbSchema]}
   >
     <section className="py-16 bg-background">
       <div className="container">
@@ -24,9 +37,7 @@ const MaxiTaxi = () => (
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">
-            What is a Maxi Taxi in Melbourne?
-          </h2>
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">What is a Maxi Taxi in Melbourne?</h2>
           <p className="font-body text-muted-foreground mb-4 leading-relaxed">
             A <strong>maxi taxi</strong> (also called a maxi cab) is a larger taxi vehicle that can carry between 
             6 and 11 passengers. In Melbourne, maxi taxis are commonly used for airport transfers with large groups, 
@@ -34,9 +45,7 @@ const MaxiTaxi = () => (
             companies as regular cabs, including 13CABS and Silver Top.
           </p>
 
-          <h2 className="text-3xl font-heading font-bold text-foreground mb-6 mt-10">
-            Maxi Taxi Fares in Melbourne
-          </h2>
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6 mt-10">Maxi Taxi Fares in Melbourne</h2>
           <div className="bg-card border border-border rounded-lg overflow-hidden mb-8">
             <table className="w-full text-sm font-body">
               <thead className="bg-muted">
@@ -59,9 +68,7 @@ const MaxiTaxi = () => (
             Prices vary based on traffic, time of day, and number of passengers.
           </p>
 
-          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">
-            How to Book a Maxi Taxi in Melbourne
-          </h2>
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">How to Book a Maxi Taxi in Melbourne</h2>
           <ul className="space-y-3 mb-8">
             {[
               "Call 13CABS (13 2227) and request a maxi cab — available 24/7",
@@ -78,9 +85,7 @@ const MaxiTaxi = () => (
             ))}
           </ul>
 
-          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">
-            When to Choose a Maxi Taxi
-          </h2>
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">When to Choose a Maxi Taxi</h2>
           <p className="font-body text-muted-foreground mb-4 leading-relaxed">
             Maxi taxis are the smart choice when travelling with 5 or more people. Instead of splitting into 
             two regular taxis, a single maxi taxi is often cheaper and more convenient. They're especially 
