@@ -22,11 +22,11 @@ const Footer = () => (
         <div>
           <h4 className="font-heading font-semibold text-primary-foreground mb-3">Popular Searches</h4>
           <ul className="space-y-2 font-body text-sm text-primary-foreground/60">
-            <li>Taxi Melbourne</li>
-            <li>Taxis Melbourne Victoria</li>
-            <li>Melbourne Airport to CBD Taxi</li>
-            <li>Maxi Taxi Melbourne</li>
-            <li>Melbourne Taxi Fare</li>
+            <li><a href="/taxi-melbourne-airport-to-cbd" className="hover:text-primary transition-colors">Melbourne Airport to CBD Taxi</a></li>
+            <li><a href="/maxi-taxi-melbourne" className="hover:text-primary transition-colors">Maxi Taxi Melbourne</a></li>
+            <li><a href="/taxis-melbourne-victoria" className="hover:text-primary transition-colors">Taxis Melbourne Victoria</a></li>
+            <li><a href="/" className="hover:text-primary transition-colors">Taxi Melbourne</a></li>
+            <li><a href="#taxi-routes" className="hover:text-primary transition-colors">Melbourne Taxi Fares</a></li>
           </ul>
         </div>
       </div>
