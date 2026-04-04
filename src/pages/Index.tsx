@@ -12,6 +12,7 @@ const Index = () => (
     <Navbar />
     <main>
       <HeroSection />
+      <MelbourneInfoWidget />
       <TaxiRoutesSection />
       <AttractionsSection />
       <ToursSection />
