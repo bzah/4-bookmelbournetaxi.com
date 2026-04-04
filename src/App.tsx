@@ -7,6 +7,9 @@ import Index from "./pages/Index.tsx";
 import AirportToCBD from "./pages/AirportToCBD.tsx";
 import MaxiTaxi from "./pages/MaxiTaxi.tsx";
 import TaxisMelbourneVictoria from "./pages/TaxisMelbourneVictoria.tsx";
+import MelbourneTaxiCBD from "./pages/MelbourneTaxiCBD.tsx";
+import HowToBookTaxi from "./pages/HowToBookTaxi.tsx";
+import TaxiFareCalculator from "./pages/TaxiFareCalculator.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -22,6 +25,9 @@ const App = () => (
           <Route path="/taxi-melbourne-airport-to-cbd" element={<AirportToCBD />} />
           <Route path="/maxi-taxi-melbourne" element={<MaxiTaxi />} />
           <Route path="/taxis-melbourne-victoria" element={<TaxisMelbourneVictoria />} />
+          <Route path="/melbourne-taxi-cbd" element={<MelbourneTaxiCBD />} />
+          <Route path="/how-to-book-taxi-melbourne" element={<HowToBookTaxi />} />
+          <Route path="/taxi-fare-calculator-melbourne" element={<TaxiFareCalculator />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
