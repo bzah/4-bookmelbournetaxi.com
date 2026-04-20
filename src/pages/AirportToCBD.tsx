@@ -95,6 +95,8 @@ const AirportToCBD = () => (
             ))}
           </ul>
 
+          <InlineAffiliateBanner offerKey="airportTransfer" />
+
           <h2 className="text-3xl font-heading font-bold text-foreground mb-6">
             Alternatives to Taxis from Melbourne Airport
           </h2>
@@ -196,6 +198,12 @@ const AirportToCBD = () => (
         </div>
       </div>
     </section>
+    <AffiliateCards
+      title="Combine Your Airport Transfer with a Tour"
+      subtitle="Top-rated Melbourne day trips, transfers and attractions — book ahead and save."
+      offers={["airportTransfer", "greatOceanRoad", "phillipIsland", "yarraValley", "puffingBilly", "mornington"]}
+      variant="dark"
+    />
   </SEOPageLayout>
 );
 
