@@ -1,5 +1,6 @@
 import SEOPageLayout, { GYG } from "@/components/SEOPageLayout";
 import { Users, CheckCircle, Car } from "lucide-react";
+import { AffiliateCards, InlineAffiliateBanner } from "@/components/AffiliateCards";
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",

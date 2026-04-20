@@ -1,5 +1,6 @@
 import SEOPageLayout, { GYG } from "@/components/SEOPageLayout";
 import { Plane, Clock, DollarSign, Car, CheckCircle } from "lucide-react";
+import { AffiliateCards, InlineAffiliateBanner } from "@/components/AffiliateCards";
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
