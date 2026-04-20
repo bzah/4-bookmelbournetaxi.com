@@ -26,9 +26,9 @@ const howToSchema = {
 const HowToBookTaxi = () => (
   <SEOPageLayout
     title="How to Book a Taxi in Melbourne"
-    subtitle="Step-by-step guide to booking a taxi in Melbourne — by app, phone, online or from a rank. All the options compared."
-    metaTitle="How to Book a Taxi in Melbourne — 4 Easy Ways (2026 Guide)"
-    metaDescription="Learn how to book a Melbourne taxi by app, phone, rank, or online. Compare 13CABS, Silver Top & more. Tips for airport transfers and peak-hour bookings."
+    subtitle="The complete 2026 guide to booking a Melbourne taxi — by smartphone app, phone call, street hail, taxi rank, hotel concierge or online. Compare 13CABS, Silver Top, Melbourne Combined and GM Cabs, plus tips for airport pre-bookings, peak-hour reservations, accessible taxis and group maxi cab bookings across Melbourne and Victoria."
+    metaTitle="How to Book a Taxi in Melbourne 2026 — 5 Easy Ways (App, Phone, Online, Rank)"
+    metaDescription="Step-by-step guide to booking a Melbourne taxi: 13CABS app, Silver Top phone (13 10 08), street hail, taxi ranks, online pre-booking. Tips for airport transfers, maxi taxis, wheelchair accessible cabs, peak hours and how to avoid surge pricing in Melbourne CBD."
     slug="how-to-book-taxi-melbourne"
     bookLink={`https://www.getyourguide.com/melbourne-l169/airport-transfer-t1/?partner_id=${GYG}&utm_medium=online_publisher`}
     jsonLd={[breadcrumbSchema, howToSchema]}
