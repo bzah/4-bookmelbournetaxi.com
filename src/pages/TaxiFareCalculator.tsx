@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SEOPageLayout, { GYG } from "@/components/SEOPageLayout";
 import { Calculator, CheckCircle } from "lucide-react";
+import { AffiliateCards, InlineAffiliateBanner } from "@/components/AffiliateCards";
 
 const FLAGFALL = 4.2;
 const RATE_DAY = 1.62;
