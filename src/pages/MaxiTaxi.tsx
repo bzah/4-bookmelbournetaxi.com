@@ -15,8 +15,8 @@ const MaxiTaxi = () => (
   <SEOPageLayout
     title="Maxi Taxi Melbourne"
     subtitle="Book a maxi taxi in Melbourne for groups, families, weddings, corporate transfers, sports teams and airport pickups. Up to 11 passengers, full luggage capacity, wheelchair accessible options, fixed-quote bookings and 24/7 availability across Melbourne and Victoria."
-    metaTitle="Maxi Taxi Melbourne 2026 — Book 11-Seater Cabs from $80 | Group & Airport Transfers"
-    metaDescription="Maxi taxi Melbourne — 6, 8 or 11 seater cabs for groups, families, weddings & airport transfers. Compare maxi cab fares (CBD–Airport $80–$110), wheelchair accessible vehicles, 13CABS & Silver Top maxi bookings, fixed-quote group transport across Victoria."
+    metaTitle="Maxi Taxi Melbourne — Book 11-Seater Cabs from $80 | Groups & Airport"
+    metaDescription="Maxi taxi Melbourne — 6, 8 or 11-seater cabs for groups, families, weddings & airport transfers. Fares from $80, wheelchair accessible, 24/7 booking with 13CABS & Silver Top."
     slug="maxi-taxi-melbourne"
     bookLink={`https://www.getyourguide.com/melbourne-l169/airport-transfer-t1/?partner_id=${GYG}&utm_medium=online_publisher`}
     jsonLd={[breadcrumbSchema]}

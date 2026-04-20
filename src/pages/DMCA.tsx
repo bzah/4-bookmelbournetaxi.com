@@ -5,7 +5,7 @@ const DMCA = () => (
     title="DMCA Policy"
     subtitle="Digital Millennium Copyright Act notice and takedown procedures for BookMelbourneTaxi.com."
     metaTitle="DMCA Policy — BookMelbourneTaxi.com"
-    metaDescription="BookMelbourneTaxi.com DMCA policy. Learn how to report copyright infringement and request content removal."
+    metaDescription="BookMelbourneTaxi.com DMCA policy and copyright takedown procedures. Learn how to report copyright infringement and submit a valid notice to remove infringing content."
     slug="dmca"
   >
     <section className="py-16 bg-background">

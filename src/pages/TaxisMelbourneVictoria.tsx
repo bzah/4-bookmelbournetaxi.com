@@ -15,8 +15,8 @@ const TaxisMelbourneVictoria = () => (
   <SEOPageLayout
     title="Taxis Melbourne Victoria"
     subtitle="The complete 2026 guide to taxi services across Melbourne and the State of Victoria, Australia. Compare every major taxi company, learn the official Victorian fare structure, find taxi ranks, understand regulations from Commercial Passenger Vehicles Victoria (CPVV), and get insider tips for visitors and locals booking cabs in metropolitan Melbourne and regional Victoria."
-    metaTitle="Taxis Melbourne Victoria 2026 — Companies, Fares, Ranks & Booking Guide"
-    metaDescription="Complete guide to taxis in Melbourne & Victoria, Australia. Compare 13CABS, Silver Top, Melbourne Combined & GM Cabs. Official fares (flagfall $4.20, $1.62/km), airport surcharge, MPTP, regulations, regional Victoria taxi services in Geelong, Ballarat, Bendigo & the Mornington Peninsula."
+    metaTitle="Taxis Melbourne Victoria — Companies, Fares & Booking Guide 2026"
+    metaDescription="Complete 2026 guide to taxis in Melbourne & Victoria. Compare 13CABS, Silver Top & GM Cabs. Official fares (flagfall $4.20, $1.62/km), regulations & regional services."
     slug="taxis-melbourne-victoria"
     bookLink={`https://www.getyourguide.com/melbourne-l169/?partner_id=${GYG}&utm_medium=online_publisher`}
     jsonLd={[breadcrumbSchema]}
