@@ -155,6 +155,11 @@ const TaxiFareCalculator = () => {
           </div>
         </div>
       </section>
+      <AffiliateCards
+        title="Save on Melbourne Transfers & Tours"
+        subtitle="Skip the meter — pre-book fixed-price transfers and top-rated Melbourne experiences. Free cancellation."
+        offers={["airportTransfer", "greatOceanRoad", "phillipIsland", "yarraValley", "eureka", "river"]}
+      />
     </SEOPageLayout>
   );
 };
