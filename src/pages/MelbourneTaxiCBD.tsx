@@ -86,6 +86,8 @@ const MelbourneTaxiCBD = () => (
             ))}
           </ul>
 
+          <InlineAffiliateBanner offerKey="streetArt" />
+
           <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Popular CBD Taxi Rank Locations</h2>
           <div className="grid md:grid-cols-2 gap-4 mb-10">
             {[
@@ -165,6 +167,11 @@ const MelbourneTaxiCBD = () => (
         </div>
       </div>
     </section>
+    <AffiliateCards
+      title="Top Things to Do in Melbourne CBD"
+      subtitle="Skip-the-line tickets and guided tours of the city's best attractions, just a short taxi ride away."
+      offers={["streetArt", "eureka", "river", "cityCard", "greatOceanRoad", "phillipIsland"]}
+    />
   </SEOPageLayout>
 );
 
