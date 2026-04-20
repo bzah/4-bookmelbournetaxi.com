@@ -116,6 +116,8 @@ const TaxisMelbourneVictoria = () => (
             ))}
           </ul>
 
+          <InlineAffiliateBanner offerKey="greatOceanRoad" />
+
           <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Regional Victoria Taxi Services</h2>
           <p className="font-body text-muted-foreground mb-4 leading-relaxed">
             Taxi services extend beyond Melbourne to regional Victoria cities including <strong>Geelong</strong>, 
@@ -187,6 +189,12 @@ const TaxisMelbourneVictoria = () => (
         </div>
       </div>
     </section>
+    <AffiliateCards
+      title="Discover Victoria — Top Day Trips & Tours"
+      subtitle="From the Great Ocean Road to Yarra Valley wineries — pre-book the best experiences across Melbourne &amp; Victoria."
+      offers={["greatOceanRoad", "phillipIsland", "yarraValley", "puffingBilly", "mornington", "airportTransfer"]}
+      variant="dark"
+    />
   </SEOPageLayout>
 );
 

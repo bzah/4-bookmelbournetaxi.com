@@ -108,6 +108,8 @@ const HowToBookTaxi = () => (
             ))}
           </ul>
 
+          <InlineAffiliateBanner offerKey="airportTransfer" />
+
           <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Booking a Taxi for Melbourne Airport (Tullamarine)</h2>
           <p className="font-body text-muted-foreground mb-4 leading-relaxed">
             For early-morning flights from Melbourne Airport (MEL, IATA), pre-booking the night before is essential. Both 13CABS and Silver Top allow scheduled bookings up to 7 days in advance through their apps. Specify <strong>"airport pickup"</strong> in the notes so the driver knows to allow extra luggage time and uses the Tullamarine Freeway via CityLink.
@@ -170,6 +172,11 @@ const HowToBookTaxi = () => (
         </div>
       </div>
     </section>
+    <AffiliateCards
+      title="Pre-Book the Best Melbourne Experiences"
+      subtitle="Beyond taxis — these top-rated tours, transfers and attractions sell out fast. Reserve now, pay later."
+      offers={["airportTransfer", "greatOceanRoad", "phillipIsland", "yarraValley", "streetArt", "eureka"]}
+    />
   </SEOPageLayout>
 );
 
