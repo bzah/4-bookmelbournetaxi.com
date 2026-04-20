@@ -1,7 +1,55 @@
+import { useState } from "react";
+import { z } from "zod";
 import SEOPageLayout from "@/components/SEOPageLayout";
-import { Mail, MapPin, Clock, MessageSquare } from "lucide-react";
+import { Mail, MapPin, Clock, MessageSquare, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 
-const ContactUs = () => (
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100),
+  email: z.string().trim().email("Invalid email").max(255),
+  message: z.string().trim().min(1, "Message is required").max(2000),
+});
+
+const ContactUs = () => {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const parsed = contactSchema.safeParse(form);
+    if (!parsed.success) {
+      toast({
+        title: "Please check your input",
+        description: parsed.error.issues[0].message,
+        variant: "destructive",
+      });
+      return;
+    }
+    setLoading(true);
+    try {
+      const { error } = await supabase.functions.invoke("send-contact-email", {
+        body: parsed.data,
+      });
+      if (error) throw error;
+      toast({
+        title: "Message sent!",
+        description: "Thanks for reaching out. We'll get back to you within 48 hours.",
+      });
+      setForm({ name: "", email: "", message: "" });
+    } catch (err) {
+      console.error(err);
+      toast({
+        title: "Failed to send",
+        description: "Please try again or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
   <SEOPageLayout
     title="Contact Us"
     subtitle="Have a question or suggestion? Get in touch with the BookMelbourneTaxi.com team."
@@ -38,23 +86,52 @@ const ContactUs = () => (
               <MessageSquare className="w-6 h-6 text-primary" />
               <h3 className="text-xl font-heading font-bold text-foreground">Send Us a Message</h3>
             </div>
-            <div className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-sm font-body font-medium text-foreground mb-1">Name</label>
-                <input type="text" className="w-full border border-border rounded-lg px-4 py-3 bg-background text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Your name" />
+                <input
+                  type="text"
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  maxLength={100}
+                  required
+                  className="w-full border border-border rounded-lg px-4 py-3 bg-background text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                  placeholder="Your name"
+                />
               </div>
               <div>
                 <label className="block text-sm font-body font-medium text-foreground mb-1">Email</label>
-                <input type="email" className="w-full border border-border rounded-lg px-4 py-3 bg-background text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="your@email.com" />
+                <input
+                  type="email"
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  maxLength={255}
+                  required
+                  className="w-full border border-border rounded-lg px-4 py-3 bg-background text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                  placeholder="your@email.com"
+                />
               </div>
               <div>
                 <label className="block text-sm font-body font-medium text-foreground mb-1">Message</label>
-                <textarea rows={5} className="w-full border border-border rounded-lg px-4 py-3 bg-background text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-primary resize-none" placeholder="How can we help?" />
+                <textarea
+                  rows={5}
+                  value={form.message}
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  maxLength={2000}
+                  required
+                  className="w-full border border-border rounded-lg px-4 py-3 bg-background text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                  placeholder="How can we help?"
+                />
               </div>
-              <button className="px-8 py-3 rounded-lg bg-primary text-primary-foreground font-body font-semibold hover:opacity-90 transition-opacity">
-                Send Message
+              <button
+                type="submit"
+                disabled={loading}
+                className="px-8 py-3 rounded-lg bg-primary text-primary-foreground font-body font-semibold hover:opacity-90 transition-opacity inline-flex items-center gap-2 disabled:opacity-60"
+              >
+                {loading && <Loader2 className="w-4 h-4 animate-spin" />}
+                {loading ? "Sending..." : "Send Message"}
               </button>
-            </div>
+            </form>
           </div>
 
           <div>
@@ -67,6 +144,7 @@ const ContactUs = () => (
       </div>
     </section>
   </SEOPageLayout>
-);
+  );
+};
 
 export default ContactUs;
