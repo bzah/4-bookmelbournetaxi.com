@@ -86,7 +86,7 @@ const MelbourneTaxiCBD = () => (
           </ul>
 
           <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Popular CBD Taxi Rank Locations</h2>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-4 mb-10">
             {[
               { name: "Flinders Street Station", detail: "Elizabeth St entrance, 24/7" },
               { name: "Southern Cross Station", detail: "Spencer St, all hours" },
@@ -94,6 +94,10 @@ const MelbourneTaxiCBD = () => (
               { name: "Melbourne Central", detail: "La Trobe St side" },
               { name: "QV Melbourne", detail: "Lonsdale St" },
               { name: "Parliament Station", detail: "Spring St, peak hours" },
+              { name: "Marvel Stadium (Docklands)", detail: "Bourke St, post-event marshals" },
+              { name: "RMIT University", detail: "Swanston St / La Trobe St corner" },
+              { name: "The Royal Melbourne Hospital", detail: "Grattan St, 24/7 medical priority" },
+              { name: "State Library Victoria", detail: "Swanston St, daytime tourists" },
             ].map((rank) => (
               <div key={rank.name} className="bg-card border border-border rounded-lg p-4 flex items-start gap-3">
                 <Car className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
@@ -103,6 +107,59 @@ const MelbourneTaxiCBD = () => (
                 </div>
               </div>
             ))}
+          </div>
+
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Peak Hours, Surge Times & When to Pre-Book</h2>
+          <p className="font-body text-muted-foreground mb-4 leading-relaxed">
+            Melbourne CBD taxi demand follows predictable patterns. <strong>Morning peak</strong> (7–9 am) sees heavy demand at hotels and Southern Cross Station as commuters and business travellers head to meetings. <strong>Evening peak</strong> (5–7 pm) is the busiest time of day, especially at Collins Street financial-district ranks. <strong>Friday and Saturday nights</strong> from 10 pm to 3 am are peak entertainment-precinct hours, with long queues at Crown Casino, King Street, and Chinatown ranks.
+          </p>
+          <p className="font-body text-muted-foreground mb-4 leading-relaxed">
+            On <strong>major event nights</strong> (AFL finals at the MCG, concerts at Rod Laver Arena, Melbourne Cup, New Year's Eve, White Night, Australian Open) demand can quadruple. The Victorian Government deploys <strong>Safe City Taxi Marshal</strong> teams at high-demand ranks to manage queues and passenger safety. We strongly recommend pre-booking via the 13CABS or Silver Top app on these nights.
+          </p>
+
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Wheelchair Accessible Taxis (WAT) in the CBD</h2>
+          <p className="font-body text-muted-foreground mb-4 leading-relaxed">
+            All major Melbourne taxi networks operate <strong>Wheelchair Accessible Taxis</strong> equipped with ramps and securement systems. WATs can be booked through 13CABS (13 22 27), Silver Top (13 10 08) or via the dedicated WAT booking line on <strong>1800 100 350</strong>. Members of the Victorian <strong>Multi Purpose Taxi Program (MPTP)</strong> receive a 50% subsidy on fares up to $60 per trip.
+          </p>
+
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Free Tram Zone vs Taxi — When Should You Cab It?</h2>
+          <p className="font-body text-muted-foreground mb-4 leading-relaxed">
+            The Melbourne CBD <strong>Free Tram Zone</strong> covers the area bounded by Spring Street, La Trobe Street, William Street, Flinders Street, and the Docklands. Inside this zone all tram travel is free. For very short trips between Federation Square, Queen Victoria Market, Southern Cross, or Docklands, the tram is faster and free. Choose a taxi when:
+          </p>
+          <ul className="space-y-3 mb-10">
+            {[
+              "You are travelling outside the Free Tram Zone (St Kilda, South Yarra, Richmond, Fitzroy)",
+              "You have luggage, shopping bags, sports equipment, or mobility aids",
+              "It is late at night and trams are running infrequently (after midnight)",
+              "You are travelling in a group of 3+ where a maxi or sedan beats per-person tram costs",
+              "You need a direct door-to-door trip without walking to a tram stop",
+              "Weather is extreme (storms, summer heatwave above 38 °C)",
+            ].map((tip) => (
+              <li key={tip} className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                <span className="font-body text-muted-foreground">{tip}</span>
+              </li>
+            ))}
+          </ul>
+
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Frequently Asked Questions — Melbourne CBD Taxis</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-heading font-semibold text-foreground text-lg mb-2">Can I hail a taxi anywhere in the Melbourne CBD?</h3>
+              <p className="font-body text-muted-foreground leading-relaxed">Yes, on most CBD streets — except tram-only sections of Swanston Street and Bourke Street Mall. Look for taxis with a lit rooftop sign indicating they are vacant.</p>
+            </div>
+            <div>
+              <h3 className="font-heading font-semibold text-foreground text-lg mb-2">Is there a minimum fare in Melbourne CBD?</h3>
+              <p className="font-body text-muted-foreground leading-relaxed">There is no minimum fare beyond the $4.20 flagfall. A 1 km trip in light traffic typically costs $6–$8 AUD.</p>
+            </div>
+            <div>
+              <h3 className="font-heading font-semibold text-foreground text-lg mb-2">Are tips expected in Melbourne taxis?</h3>
+              <p className="font-body text-muted-foreground leading-relaxed">No, tipping is not part of Australian culture. Many passengers round the fare up to the nearest dollar as a courtesy, but it is not expected.</p>
+            </div>
+            <div>
+              <h3 className="font-heading font-semibold text-foreground text-lg mb-2">Can I share a taxi with strangers in the CBD at night?</h3>
+              <p className="font-body text-muted-foreground leading-relaxed">Yes — at official late-night Safe City Taxi Ranks (e.g. King Street, Flinders Street) marshals will often co-ordinate share-rides for passengers heading in the same direction, with the fare split between you.</p>
+            </div>
           </div>
         </div>
       </div>
