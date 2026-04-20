@@ -86,6 +86,8 @@ const MaxiTaxi = () => (
             ))}
           </ul>
 
+          <InlineAffiliateBanner offerKey="airportTransfer" />
+
           <h2 className="text-3xl font-heading font-bold text-foreground mb-6">When to Choose a Maxi Taxi</h2>
           <p className="font-body text-muted-foreground mb-4 leading-relaxed">
             Maxi taxis are the smart choice when travelling with 5 or more people. Instead of splitting into 
@@ -164,6 +166,12 @@ const MaxiTaxi = () => (
         </div>
       </div>
     </section>
+    <AffiliateCards
+      title="Group Tours & Activities — Perfect for Maxi Taxi Passengers"
+      subtitle="Travelling as a group? Combine your maxi taxi with these top-rated Melbourne group experiences."
+      offers={["greatOceanRoad", "yarraValley", "phillipIsland", "puffingBilly", "mornington", "airportTransfer"]}
+      variant="dark"
+    />
   </SEOPageLayout>
 );
 
