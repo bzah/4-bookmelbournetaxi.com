@@ -13,9 +13,9 @@ const breadcrumbSchema = {
 const MelbourneTaxiCBD = () => (
   <SEOPageLayout
     title="Melbourne Taxi CBD"
-    subtitle="Everything you need to know about catching a taxi in Melbourne's Central Business District — ranks, fares, peak hours and insider tips."
-    metaTitle="Melbourne Taxi CBD — Taxi Ranks, Fares & Tips for the City Centre"
-    metaDescription="Find taxis in Melbourne CBD easily. 50+ taxi ranks, fare guide from $4.20 flagfall, night-safe ranks, and tips for getting around the city centre by cab."
+    subtitle="The complete 2026 guide to catching a taxi in Melbourne's Central Business District (CBD). Find every major taxi rank, understand the metered fare structure, learn the busiest pickup points, late-night safe ranks, accessible taxi options, and insider tips from local Melbourne taxi drivers."
+    metaTitle="Melbourne Taxi CBD 2026 — 50+ Taxi Ranks, Fares from $4.20 & Insider Tips"
+    metaDescription="Catch a taxi in Melbourne CBD: 50+ ranks at Flinders St, Southern Cross, Crown, Federation Square. Flagfall $4.20, $1.62/km. Late-night safe ranks, maxi taxi pickup zones, 13CABS & Silver Top options for the Melbourne city centre."
     slug="melbourne-taxi-cbd"
     bookLink={`https://www.getyourguide.com/melbourne-l169/airport-transfer-t1/?partner_id=${GYG}&utm_medium=online_publisher`}
     jsonLd={[breadcrumbSchema]}
