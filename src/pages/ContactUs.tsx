@@ -144,6 +144,7 @@ const ContactUs = () => {
       </div>
     </section>
   </SEOPageLayout>
-);
+  );
+};
 
 export default ContactUs;
