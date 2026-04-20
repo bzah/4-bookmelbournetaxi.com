@@ -91,11 +91,75 @@ const MaxiTaxi = () => (
             two regular taxis, a single maxi taxi is often cheaper and more convenient. They're especially 
             popular for Melbourne Airport pickups where families and groups have multiple suitcases.
           </p>
-          <p className="font-body text-muted-foreground leading-relaxed">
+          <p className="font-body text-muted-foreground mb-8 leading-relaxed">
             Maxi taxis are also the preferred option for passengers using wheelchairs, as many vehicles 
             feature ramp access and securement systems. Contact your taxi company to confirm wheelchair-accessible 
             vehicle availability.
           </p>
+
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Popular Uses for Maxi Taxis in Melbourne</h2>
+          <ul className="space-y-3 mb-10">
+            {[
+              "Melbourne Airport (Tullamarine) group transfers — families of 5+ with luggage",
+              "Wedding transport for bridal parties from ceremony to reception",
+              "Corporate group transfers for conferences at MCEC, Crown, or Etihad Stadium",
+              "Sports teams travelling to MCG, Marvel Stadium, AAMI Park, or Melbourne Park",
+              "Hens and bucks night party transport between bars and restaurants",
+              "School excursions, formals, and graduation transfers",
+              "Funeral transport for extended family",
+              "Day tours to Yarra Valley wineries, Mornington Peninsula or Phillip Island",
+              "Wheelchair-accessible group transport (WAT maxi taxis)",
+              "Cruise ship terminal transfers from Station Pier, Port Melbourne",
+            ].map((use) => (
+              <li key={use} className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                <span className="font-body text-muted-foreground">{use}</span>
+              </li>
+            ))}
+          </ul>
+
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Maxi Taxi vs Regular Taxi vs Rideshare — Cost Comparison</h2>
+          <p className="font-body text-muted-foreground mb-4 leading-relaxed">
+            For a group of 6 travelling from Melbourne Airport to the CBD with luggage:
+          </p>
+          <div className="bg-card border border-border rounded-lg overflow-hidden mb-8">
+            <table className="w-full text-sm font-body">
+              <thead className="bg-muted">
+                <tr>
+                  <th className="text-left p-4 text-foreground font-semibold">Option</th>
+                  <th className="text-right p-4 text-foreground font-semibold">Total Cost</th>
+                  <th className="text-right p-4 text-foreground font-semibold">Per Person</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                <tr><td className="p-4 text-muted-foreground">1× Maxi taxi</td><td className="p-4 text-right text-foreground">$80–$110</td><td className="p-4 text-right text-foreground">$13–$18</td></tr>
+                <tr><td className="p-4 text-muted-foreground">2× Standard taxis</td><td className="p-4 text-right text-foreground">$110–$150</td><td className="p-4 text-right text-foreground">$18–$25</td></tr>
+                <tr><td className="p-4 text-muted-foreground">2× UberX</td><td className="p-4 text-right text-foreground">$100–$160 (surge dependent)</td><td className="p-4 text-right text-foreground">$17–$27</td></tr>
+                <tr><td className="p-4 text-muted-foreground">1× Uber XL / Premier 6-seater</td><td className="p-4 text-right text-foreground">$95–$140</td><td className="p-4 text-right text-foreground">$16–$23</td></tr>
+                <tr><td className="p-4 text-muted-foreground">SkyBus (6× adult tickets)</td><td className="p-4 text-right text-foreground">$118</td><td className="p-4 text-right text-foreground">$19.75</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Frequently Asked Questions — Maxi Taxis Melbourne</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-heading font-semibold text-foreground text-lg mb-2">How many passengers can a Melbourne maxi taxi carry?</h3>
+              <p className="font-body text-muted-foreground leading-relaxed">Most Melbourne maxi taxis seat 6, 8 or up to 11 passengers depending on vehicle configuration. The most common is the 11-seater Toyota HiAce. Always specify your group size when booking — the dispatcher will assign the right vehicle.</p>
+            </div>
+            <div>
+              <h3 className="font-heading font-semibold text-foreground text-lg mb-2">Can I get a fixed quote for a Melbourne maxi taxi?</h3>
+              <p className="font-body text-muted-foreground leading-relaxed">Yes. While metered fares are standard, many maxi taxi operators offer <strong>fixed-quote bookings</strong> for airport transfers, weddings and tours — useful for budgeting and avoiding surprises in heavy traffic.</p>
+            </div>
+            <div>
+              <h3 className="font-heading font-semibold text-foreground text-lg mb-2">Are maxi taxis available 24/7 in Melbourne?</h3>
+              <p className="font-body text-muted-foreground leading-relaxed">Yes — 13CABS and Silver Top dispatch maxi taxis around the clock, but availability is lower between 1 am and 5 am. Pre-booking is strongly recommended for early-morning airport runs.</p>
+            </div>
+            <div>
+              <h3 className="font-heading font-semibold text-foreground text-lg mb-2">Do maxi taxis have child seats?</h3>
+              <p className="font-body text-muted-foreground leading-relaxed">Child restraints are not standard. You must request a child seat at the time of booking (usually a $5–$10 surcharge) or bring your own approved restraint.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
