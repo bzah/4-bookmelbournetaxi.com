@@ -13,9 +13,9 @@ const breadcrumbSchema = {
 const TaxisMelbourneVictoria = () => (
   <SEOPageLayout
     title="Taxis Melbourne Victoria"
-    subtitle="Everything you need to know about taxi services across Melbourne and Victoria, Australia. Companies, fares, regulations, and booking options."
-    metaTitle="Taxis Melbourne Victoria — Companies, Fares & Booking Guide 2026"
-    metaDescription="Complete guide to taxi services in Melbourne & Victoria. Compare taxi companies (13CABS, Silver Top), fare rates, regulations, and tips for visitors and locals."
+    subtitle="The complete 2026 guide to taxi services across Melbourne and the State of Victoria, Australia. Compare every major taxi company, learn the official Victorian fare structure, find taxi ranks, understand regulations from Commercial Passenger Vehicles Victoria (CPVV), and get insider tips for visitors and locals booking cabs in metropolitan Melbourne and regional Victoria."
+    metaTitle="Taxis Melbourne Victoria 2026 — Companies, Fares, Ranks & Booking Guide"
+    metaDescription="Complete guide to taxis in Melbourne & Victoria, Australia. Compare 13CABS, Silver Top, Melbourne Combined & GM Cabs. Official fares (flagfall $4.20, $1.62/km), airport surcharge, MPTP, regulations, regional Victoria taxi services in Geelong, Ballarat, Bendigo & the Mornington Peninsula."
     slug="taxis-melbourne-victoria"
     bookLink={`https://www.getyourguide.com/melbourne-l169/?partner_id=${GYG}&utm_medium=online_publisher`}
     jsonLd={[breadcrumbSchema]}
