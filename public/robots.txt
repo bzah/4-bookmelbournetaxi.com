@@ -30,4 +30,7 @@ Disallow: /wp-login.php
 Disallow: /wp-content/
 Disallow: /xmlrpc.php
 
-Sitemap: https://bookmelbournetaxi.com/sitemap.xml
+Sitemap: https://bookmelbournetaxi.com/sitemap_index.xml
+Sitemap: https://bookmelbournetaxi.com/page-sitemap.xml
+Sitemap: https://bookmelbournetaxi.com/taxi-services-sitemap.xml
+Sitemap: https://bookmelbournetaxi.com/legal-sitemap.xml
