@@ -32,14 +32,16 @@ const BookTaxiCTA = ({
           href={bookLink}
           target="_blank"
           rel="noopener noreferrer sponsored"
+          title="Book Melbourne airport transfer with free cancellation"
           className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-primary text-primary-foreground font-body font-semibold hover:opacity-90 transition-opacity"
         >
           <Phone className="w-4 h-4" />
-          Book a taxi
+          Book Melbourne airport taxi
           <ExternalLink className="w-3.5 h-3.5 opacity-70" />
         </a>
         <Link
-          to="/taxi-fare-calculator-melbourne"
+          to="/taxi-fare-calculator-melbourne#calculator"
+          title="Calculate your Melbourne taxi fare online"
           className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border-2 border-primary text-primary font-body font-semibold hover:bg-primary hover:text-primary-foreground transition-colors"
         >
           <Calculator className="w-4 h-4" />
@@ -56,18 +58,20 @@ const BookTaxiCTA = ({
           href={bookLink}
           target="_blank"
           rel="noopener noreferrer sponsored"
+          title="Book Melbourne airport transfer with free cancellation"
           className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-primary text-primary-foreground font-body font-semibold text-base hover:opacity-90 transition-opacity"
         >
           <Phone className="w-4 h-4" />
-          Book a taxi
+          Book Melbourne airport taxi
           <ExternalLink className="w-3.5 h-3.5 opacity-70" />
         </a>
         <Link
-          to="/taxi-fare-calculator-melbourne"
+          to="/taxi-fare-calculator-melbourne#calculator"
+          title="Calculate your Melbourne taxi fare online"
           className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/30 text-primary-foreground font-body font-semibold text-base hover:bg-primary-foreground/15 transition-colors"
         >
           <Calculator className="w-4 h-4" />
-          Get a quote
+          Get fare quote online
         </Link>
       </div>
     );
@@ -93,18 +97,20 @@ const BookTaxiCTA = ({
             href={bookLink}
             target="_blank"
             rel="noopener noreferrer sponsored"
+            title="Book Melbourne airport transfer with free cancellation"
             className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-primary text-primary-foreground font-body font-semibold hover:opacity-90 transition-opacity whitespace-nowrap"
           >
             <Phone className="w-4 h-4" />
-            Book a taxi
+            Book airport taxi Melbourne
             <ExternalLink className="w-3.5 h-3.5 opacity-70" />
           </a>
           <Link
-            to="/taxi-fare-calculator-melbourne"
+            to="/taxi-fare-calculator-melbourne#calculator"
+            title="Calculate your Melbourne taxi fare online"
             className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border-2 border-primary text-primary font-body font-semibold hover:bg-primary hover:text-primary-foreground transition-colors whitespace-nowrap"
           >
             <Calculator className="w-4 h-4" />
-            Get a quote
+            Calculate fare online
           </Link>
         </div>
       </div>
