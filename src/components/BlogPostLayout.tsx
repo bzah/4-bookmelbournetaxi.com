@@ -154,6 +154,11 @@ const BlogPostLayout = ({ post, related }: BlogPostLayoutProps) => {
               </section>
             ))}
 
+            <BookTaxiCTA
+              heading="Now you know the fares — book your ride"
+              subheading="Pre-book online for a fixed price with free cancellation, or get an instant fare estimate from our calculator."
+            />
+
             {/* FAQs — native accordion + JSON-LD FAQPage schema (emitted in <head>) */}
             <section
               className="mt-12 pt-10 border-t border-border"
