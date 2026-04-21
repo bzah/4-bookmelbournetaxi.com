@@ -12,6 +12,11 @@ export interface BlogFaq {
   a: string;
 }
 
+export interface BlogRoute {
+  pickup: string;
+  dropoff: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string; // H1 + og:title
@@ -29,6 +34,8 @@ export interface BlogPost {
   sections: BlogSection[];
   faqs: BlogFaq[];
   relatedInternal: ("airport" | "maxi" | "victoria" | "cbd" | "howto" | "calculator")[];
+  /** Optional route — when present, blog post pre-fills the quote form. */
+  route?: BlogRoute;
 }
 
 export const blogPosts: BlogPost[] = [
