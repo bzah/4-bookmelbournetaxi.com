@@ -1,15 +1,36 @@
 import SEOPageLayout, { GYG } from "@/components/SEOPageLayout";
 import { Plane, Clock, DollarSign, Car, CheckCircle } from "lucide-react";
 import { AffiliateCards, InlineAffiliateBanner } from "@/components/AffiliateCards";
+import RelatedPages from "@/components/RelatedPages";
+import {
+  sitewideLocalBusinessSchema,
+  aggregateRatingSchema,
+  buildServiceSchema,
+  buildFaqSchema,
+  buildBreadcrumbSchema,
+} from "@/lib/seo-schemas";
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://bookmelbournetaxi.com" },
-    { "@type": "ListItem", position: 2, name: "Airport to CBD Taxi", item: "https://bookmelbournetaxi.com/taxi-melbourne-airport-to-cbd" },
-  ],
-};
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home" },
+  { name: "Airport to CBD Taxi", slug: "taxi-melbourne-airport-to-cbd" },
+]);
+
+const serviceSchema = buildServiceSchema({
+  name: "Melbourne Airport to CBD Taxi Transfer",
+  description:
+    "Metered and pre-booked taxi transfers between Melbourne Airport (Tullamarine, MEL) and the Melbourne CBD. Fares $55–$75 AUD, 25–40 minutes via the Tullamarine Freeway and CityLink. Available 24/7.",
+  slug: "taxi-melbourne-airport-to-cbd",
+  serviceType: "Airport taxi transfer",
+  priceRange: "$55–$75 AUD",
+});
+
+const faqSchema = buildFaqSchema([
+  { q: "Do Melbourne Airport taxis accept credit cards?", a: "Yes. Every licensed Melbourne taxi accepts contactless payment with Visa, Mastercard, American Express, EFTPOS, Apple Pay and Google Pay. A 5% card surcharge applies. Cash is also accepted." },
+  { q: "Can I book a maxi taxi from Melbourne Airport?", a: "Yes — maxi taxis (6 to 11 passengers) are available at all terminal ranks but pre-booking through 13CABS or Silver Top is recommended for groups of 5+. Maxi airport fares to the CBD typically run $80–$110 AUD." },
+  { q: "Are child seats available in Melbourne taxis?", a: "Children under 7 must legally use an approved child restraint. Standard taxis do not carry child seats by default — request one when booking (a small surcharge applies) or bring your own." },
+  { q: "Is there a flat rate from Melbourne Airport to the CBD?", a: "Metered taxis use the official Victorian fare structure — there is no government-set flat rate. However, several private transfer companies offer fixed-price airport transfers from around $89 AUD." },
+  { q: "How early should I leave the CBD for a flight at Melbourne Airport?", a: "Allow 60 minutes outside peak hours and 90 minutes during peak (7–9 am, 4–7 pm). For international flights, arrive at the airport 3 hours before departure; for domestic, 90 minutes is standard." },
+]);
 
 const AirportToCBD = () => (
   <SEOPageLayout
@@ -19,8 +40,9 @@ const AirportToCBD = () => (
     metaDescription="Melbourne Airport to CBD taxi: $55–$75 AUD, 25–40 min via Tullamarine Freeway. Compare 13CABS, Silver Top, maxi & private transfer fares with 2026 booking tips."
     slug="taxi-melbourne-airport-to-cbd"
     bookLink={`https://www.getyourguide.com/melbourne-l169/airport-transfer-t1/?partner_id=${GYG}&utm_medium=online_publisher`}
-    jsonLd={[breadcrumbSchema]}
+    jsonLd={[sitewideLocalBusinessSchema, aggregateRatingSchema, serviceSchema, faqSchema, breadcrumbSchema]}
   >
+
     {/* Key Info Cards */}
     <section className="py-16 bg-background">
       <div className="container">
@@ -204,6 +226,7 @@ const AirportToCBD = () => (
       offers={["airportTransfer", "greatOceanRoad", "phillipIsland", "yarraValley", "puffingBilly", "mornington"]}
       variant="dark"
     />
+    <RelatedPages links={["maxi", "cbd", "calculator", "howto", "victoria"]} />
   </SEOPageLayout>
 );
 

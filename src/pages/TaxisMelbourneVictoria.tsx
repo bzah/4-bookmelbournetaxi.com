@@ -1,15 +1,36 @@
 import SEOPageLayout, { GYG } from "@/components/SEOPageLayout";
 import { MapPin, CheckCircle, Phone } from "lucide-react";
 import { AffiliateCards, InlineAffiliateBanner } from "@/components/AffiliateCards";
+import RelatedPages from "@/components/RelatedPages";
+import {
+  sitewideLocalBusinessSchema,
+  aggregateRatingSchema,
+  buildServiceSchema,
+  buildFaqSchema,
+  buildBreadcrumbSchema,
+} from "@/lib/seo-schemas";
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://bookmelbournetaxi.com" },
-    { "@type": "ListItem", position: 2, name: "Taxis Melbourne Victoria", item: "https://bookmelbournetaxi.com/taxis-melbourne-victoria" },
-  ],
-};
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home" },
+  { name: "Taxis Melbourne Victoria", slug: "taxis-melbourne-victoria" },
+]);
+
+const serviceSchema = buildServiceSchema({
+  name: "Melbourne & Victoria Taxi Services",
+  description:
+    "Comprehensive guide to licensed taxi services across Melbourne and the State of Victoria, Australia. Compare every major operator, official Victorian fare structure, regulations, and tips for booking standard, maxi and wheelchair-accessible cabs.",
+  slug: "taxis-melbourne-victoria",
+  serviceType: "Taxi directory and information",
+  priceRange: "$$",
+});
+
+const faqSchema = buildFaqSchema([
+  { q: "What is the cheapest way to get a taxi in Melbourne?", a: "All taxi fares are set by the Victorian Government, so the meter price is the same across operators. To save money, avoid pre-booking by phone (saves the $2 booking fee), travel before 10 pm to get the daytime per-km rate, and split a maxi taxi if you're in a group." },
+  { q: "Can I use Myki on taxis in Melbourne?", a: "No. Myki is only valid on trams, trains, and buses. Taxis use cash, card, mobile pay, Cabcharge accounts, or MPTP cards." },
+  { q: "Are Melbourne taxis available in regional Victoria?", a: "Yes — 13CABS and Silver Top operate in major regional centres, and most regional towns have their own local taxi network. Pre-booking is recommended outside the metro area, especially after 9 pm." },
+  { q: "What's the difference between a taxi and a hire car in Victoria?", a: "Taxis can be hailed on the street, use ranks, charge by meter, and display a rooftop sign. Hire cars must be pre-booked, charge an agreed fare, and don't display a rooftop sign. Both are CPVV-regulated." },
+  { q: "Do Melbourne taxis charge extra for luggage?", a: "No additional luggage fee applies for normal suitcases. Bulky items (surfboards, bicycles, large boxes) may attract a small handling charge at the driver's discretion. Always confirm before loading." },
+]);
 
 const TaxisMelbourneVictoria = () => (
   <SEOPageLayout
@@ -19,8 +40,9 @@ const TaxisMelbourneVictoria = () => (
     metaDescription="Complete 2026 guide to taxis in Melbourne & Victoria. Compare 13CABS, Silver Top & GM Cabs. Official fares (flagfall $4.20, $1.62/km), regulations & regional services."
     slug="taxis-melbourne-victoria"
     bookLink={`https://www.getyourguide.com/melbourne-l169/?partner_id=${GYG}&utm_medium=online_publisher`}
-    jsonLd={[breadcrumbSchema]}
+    jsonLd={[sitewideLocalBusinessSchema, aggregateRatingSchema, serviceSchema, faqSchema, breadcrumbSchema]}
   >
+
     <section className="py-16 bg-background">
       <div className="container">
         <div className="max-w-3xl mx-auto">
@@ -195,6 +217,7 @@ const TaxisMelbourneVictoria = () => (
       offers={["greatOceanRoad", "phillipIsland", "yarraValley", "puffingBilly", "mornington", "airportTransfer"]}
       variant="dark"
     />
+    <RelatedPages links={["airport", "maxi", "cbd", "howto", "calculator"]} />
   </SEOPageLayout>
 );
 
