@@ -6,6 +6,7 @@ import SEOHead from "@/components/SEOHead";
 import RelatedPages from "@/components/RelatedPages";
 import BookTaxiCTA from "@/components/BookTaxiCTA";
 import StickyBlogCTA from "@/components/StickyBlogCTA";
+import QuoteForm from "@/components/QuoteForm";
 import {
   Accordion,
   AccordionContent,
