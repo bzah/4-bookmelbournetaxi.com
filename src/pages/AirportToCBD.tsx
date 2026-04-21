@@ -1,6 +1,7 @@
 import SEOPageLayout, { GYG } from "@/components/SEOPageLayout";
 import { Plane, Clock, DollarSign, Car, CheckCircle } from "lucide-react";
 import { AffiliateCards, InlineAffiliateBanner } from "@/components/AffiliateCards";
+import GetYourGuideSection from "@/components/GetYourGuideSection";
 import RelatedPages from "@/components/RelatedPages";
 import {
   sitewideLocalBusinessSchema,
@@ -220,6 +221,7 @@ const AirportToCBD = () => (
         </div>
       </div>
     </section>
+    <GetYourGuideSection variant="light" />
     <AffiliateCards
       title="Combine Your Airport Transfer with a Tour"
       subtitle="Top-rated Melbourne day trips, transfers and attractions — book ahead and save."

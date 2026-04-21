@@ -1,6 +1,7 @@
 import SEOPageLayout, { GYG } from "@/components/SEOPageLayout";
 import { Users, CheckCircle, Car } from "lucide-react";
 import { AffiliateCards, InlineAffiliateBanner } from "@/components/AffiliateCards";
+import GetYourGuideSection from "@/components/GetYourGuideSection";
 import RelatedPages from "@/components/RelatedPages";
 import {
   sitewideLocalBusinessSchema,
@@ -187,6 +188,11 @@ const MaxiTaxi = () => (
         </div>
       </div>
     </section>
+    <GetYourGuideSection
+      variant="light"
+      heading="Need a Group Airport Transfer? Book a Maxi via GetYourGuide"
+      subheading="Pre-book a private 7-seat maxi from Melbourne Airport with a fixed price, free 24-hour cancellation and meet-&-greet at arrivals — using our official GetYourGuide partner link."
+    />
     <AffiliateCards
       title="Group Tours & Activities — Perfect for Maxi Taxi Passengers"
       subtitle="Travelling as a group? Combine your maxi taxi with these top-rated Melbourne group experiences."
