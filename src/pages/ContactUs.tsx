@@ -4,6 +4,17 @@ import SEOPageLayout from "@/components/SEOPageLayout";
 import { Mail, MapPin, Clock, MessageSquare, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
+import RelatedPages from "@/components/RelatedPages";
+import {
+  sitewideLocalBusinessSchema,
+  aggregateRatingSchema,
+  buildBreadcrumbSchema,
+} from "@/lib/seo-schemas";
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home" },
+  { name: "Contact Us", slug: "contact" },
+]);
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
@@ -56,6 +67,7 @@ const ContactUs = () => {
     metaTitle="Contact Us — BookMelbourneTaxi.com"
     metaDescription="Contact BookMelbourneTaxi.com for questions about Melbourne taxi fares, routes, airport transfers, or partnership enquiries."
     slug="contact"
+    jsonLd={[sitewideLocalBusinessSchema, aggregateRatingSchema, breadcrumbSchema]}
   >
     <section className="py-16 bg-background">
       <div className="container">
@@ -143,6 +155,11 @@ const ContactUs = () => {
         </div>
       </div>
     </section>
+    <RelatedPages
+      title="While You're Here — Popular Guides"
+      subtitle="Browse our most-read Melbourne taxi resources."
+      links={["airport", "maxi", "cbd", "victoria", "calculator", "howto"]}
+    />
   </SEOPageLayout>
   );
 };

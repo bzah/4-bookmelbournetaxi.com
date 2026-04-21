@@ -1,4 +1,13 @@
 import SEOPageLayout from "@/components/SEOPageLayout";
+import {
+  sitewideLocalBusinessSchema,
+  buildBreadcrumbSchema,
+} from "@/lib/seo-schemas";
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home" },
+  { name: "Cookie Policy", slug: "cookie-policy" },
+]);
 
 const CookiePolicy = () => (
   <SEOPageLayout
@@ -7,6 +16,7 @@ const CookiePolicy = () => (
     metaTitle="Cookie Policy — BookMelbourneTaxi.com"
     metaDescription="Learn how BookMelbourneTaxi.com uses cookies to improve your experience. Manage your cookie preferences and understand what data is collected."
     slug="cookie-policy"
+    jsonLd={[sitewideLocalBusinessSchema, breadcrumbSchema]}
   >
     <section className="py-16 bg-background">
       <div className="container">

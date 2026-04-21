@@ -1,15 +1,35 @@
 import SEOPageLayout, { GYG } from "@/components/SEOPageLayout";
 import { Users, CheckCircle, Car } from "lucide-react";
 import { AffiliateCards, InlineAffiliateBanner } from "@/components/AffiliateCards";
+import RelatedPages from "@/components/RelatedPages";
+import {
+  sitewideLocalBusinessSchema,
+  aggregateRatingSchema,
+  buildServiceSchema,
+  buildFaqSchema,
+  buildBreadcrumbSchema,
+} from "@/lib/seo-schemas";
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://bookmelbournetaxi.com" },
-    { "@type": "ListItem", position: 2, name: "Maxi Taxi Melbourne", item: "https://bookmelbournetaxi.com/maxi-taxi-melbourne" },
-  ],
-};
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home" },
+  { name: "Maxi Taxi Melbourne", slug: "maxi-taxi-melbourne" },
+]);
+
+const serviceSchema = buildServiceSchema({
+  name: "Maxi Taxi Melbourne — 6, 8 & 11-Seater Group Cabs",
+  description:
+    "Maxi taxis in Melbourne for groups, families, weddings and corporate transfers. 6, 8 or 11 seats with full luggage capacity, wheelchair-accessible options, fixed-quote bookings and 24/7 availability across Melbourne and Victoria.",
+  slug: "maxi-taxi-melbourne",
+  serviceType: "Group taxi service",
+  priceRange: "$30–$200 AUD",
+});
+
+const faqSchema = buildFaqSchema([
+  { q: "How many passengers can a Melbourne maxi taxi carry?", a: "Most Melbourne maxi taxis seat 6, 8 or up to 11 passengers depending on vehicle configuration. The most common is the 11-seater Toyota HiAce." },
+  { q: "Can I get a fixed quote for a Melbourne maxi taxi?", a: "Yes. Many maxi taxi operators offer fixed-quote bookings for airport transfers, weddings and tours — useful for budgeting and avoiding surprises in heavy traffic." },
+  { q: "Are maxi taxis available 24/7 in Melbourne?", a: "Yes — 13CABS and Silver Top dispatch maxi taxis around the clock, but availability is lower between 1 am and 5 am. Pre-booking is strongly recommended for early-morning airport runs." },
+  { q: "Do maxi taxis have child seats?", a: "Child restraints are not standard. You must request a child seat at the time of booking (usually a $5–$10 surcharge) or bring your own approved restraint." },
+]);
 
 const MaxiTaxi = () => (
   <SEOPageLayout
@@ -19,8 +39,9 @@ const MaxiTaxi = () => (
     metaDescription="Maxi taxi Melbourne — 6, 8 or 11-seater cabs for groups, families & airport transfers. Fares from $80, wheelchair accessible, 24/7 with 13CABS &amp; Silver Top."
     slug="maxi-taxi-melbourne"
     bookLink={`https://www.getyourguide.com/melbourne-l169/airport-transfer-t1/?partner_id=${GYG}&utm_medium=online_publisher`}
-    jsonLd={[breadcrumbSchema]}
+    jsonLd={[sitewideLocalBusinessSchema, aggregateRatingSchema, serviceSchema, faqSchema, breadcrumbSchema]}
   >
+
     <section className="py-16 bg-background">
       <div className="container">
         <div className="grid md:grid-cols-3 gap-6 mb-14">
@@ -172,6 +193,7 @@ const MaxiTaxi = () => (
       offers={["greatOceanRoad", "yarraValley", "phillipIsland", "puffingBilly", "mornington", "airportTransfer"]}
       variant="dark"
     />
+    <RelatedPages links={["airport", "victoria", "cbd", "howto", "calculator"]} />
   </SEOPageLayout>
 );
 

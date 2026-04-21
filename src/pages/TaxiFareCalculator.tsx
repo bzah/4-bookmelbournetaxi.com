@@ -2,6 +2,14 @@ import { useState } from "react";
 import SEOPageLayout, { GYG } from "@/components/SEOPageLayout";
 import { Calculator, CheckCircle } from "lucide-react";
 import { AffiliateCards, InlineAffiliateBanner } from "@/components/AffiliateCards";
+import RelatedPages from "@/components/RelatedPages";
+import {
+  sitewideLocalBusinessSchema,
+  aggregateRatingSchema,
+  buildServiceSchema,
+  buildFaqSchema,
+  buildBreadcrumbSchema,
+} from "@/lib/seo-schemas";
 
 const FLAGFALL = 4.2;
 const RATE_DAY = 1.62;
@@ -9,14 +17,26 @@ const RATE_NIGHT = 1.8;
 const AIRPORT_SURCHARGE = 3.5;
 const BOOKING_FEE = 2.0;
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://bookmelbournetaxi.com" },
-    { "@type": "ListItem", position: 2, name: "Taxi Fare Calculator", item: "https://bookmelbournetaxi.com/taxi-fare-calculator-melbourne" },
-  ],
-};
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home" },
+  { name: "Taxi Fare Calculator", slug: "taxi-fare-calculator-melbourne" },
+]);
+
+const serviceSchema = buildServiceSchema({
+  name: "Melbourne Taxi Fare Calculator",
+  description:
+    "Free online Melbourne taxi fare calculator using official Victorian Government rates — flagfall $4.20, $1.62/km daytime, $1.80/km night and weekends, plus airport surcharge.",
+  slug: "taxi-fare-calculator-melbourne",
+  serviceType: "Taxi fare calculator",
+});
+
+const faqSchema = buildFaqSchema([
+  { q: "How accurate is the Melbourne taxi fare calculator?", a: "Our calculator uses the official Victorian Government taxi rates (flagfall $4.20, day rate $1.62/km, night/weekend $1.80/km). Estimates are accurate within 10–15% — actual fares may vary slightly depending on traffic, waiting time and the route taken." },
+  { q: "Does the calculator include the airport surcharge?", a: "Yes — tick the 'Airport pickup' option to include the $3.50 Melbourne Airport surcharge." },
+  { q: "What's the difference between day and night taxi rates in Melbourne?", a: "Day rate ($1.62/km) applies Monday–Friday, 6 am–10 pm. Night rate ($1.80/km) applies 10 pm–5 am, all weekends and public holidays." },
+  { q: "Are the rates the same for 13CABS and Silver Top?", a: "Yes — all Melbourne taxi fares are set by the Victorian Government and apply identically to every licensed operator." },
+]);
+
 
 const TaxiFareCalculator = () => {
   const [distance, setDistance] = useState(15);
@@ -35,7 +55,7 @@ const TaxiFareCalculator = () => {
       metaDescription="Calculate Melbourne taxi fares online. Enter distance, time of day, and surcharges to get an instant estimate. Includes fare breakdown and common route prices."
       slug="taxi-fare-calculator-melbourne"
       bookLink={`https://www.getyourguide.com/melbourne-l169/airport-transfer-t1/?partner_id=${GYG}&utm_medium=online_publisher`}
-      jsonLd={[breadcrumbSchema]}
+      jsonLd={[sitewideLocalBusinessSchema, aggregateRatingSchema, serviceSchema, faqSchema, breadcrumbSchema]}
     >
       <section className="py-16 bg-background">
         <div className="container">
@@ -160,6 +180,7 @@ const TaxiFareCalculator = () => {
         subtitle="Skip the meter — pre-book fixed-price transfers and top-rated Melbourne experiences. Free cancellation."
         offers={["airportTransfer", "greatOceanRoad", "phillipIsland", "yarraValley", "eureka", "river"]}
       />
+      <RelatedPages links={["airport", "maxi", "cbd", "victoria", "howto"]} />
     </SEOPageLayout>
   );
 };

@@ -1,5 +1,15 @@
 import SEOPageLayout from "@/components/SEOPageLayout";
 import { Shield, Eye, Heart, CheckCircle } from "lucide-react";
+import RelatedPages from "@/components/RelatedPages";
+import {
+  sitewideLocalBusinessSchema,
+  buildBreadcrumbSchema,
+} from "@/lib/seo-schemas";
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home" },
+  { name: "Parents Info", slug: "parents-info" },
+]);
 
 const ParentsInfo = () => (
   <SEOPageLayout
@@ -8,6 +18,7 @@ const ParentsInfo = () => (
     metaTitle="Parents Info — Child Safety & Privacy | BookMelbourneTaxi.com"
     metaDescription="Learn how BookMelbourneTaxi.com ensures child safety online. No data collection from minors, safe content, and COPPA-compliant practices."
     slug="parents-info"
+    jsonLd={[sitewideLocalBusinessSchema, breadcrumbSchema]}
   >
     <section className="py-16 bg-background">
       <div className="container">
@@ -71,6 +82,7 @@ const ParentsInfo = () => (
         </div>
       </div>
     </section>
+    <RelatedPages links={["maxi", "airport", "calculator", "howto"]} />
   </SEOPageLayout>
 );
 

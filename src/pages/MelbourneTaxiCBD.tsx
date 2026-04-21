@@ -1,15 +1,35 @@
 import SEOPageLayout, { GYG } from "@/components/SEOPageLayout";
 import { MapPin, Clock, DollarSign, CheckCircle, Car } from "lucide-react";
 import { AffiliateCards, InlineAffiliateBanner } from "@/components/AffiliateCards";
+import RelatedPages from "@/components/RelatedPages";
+import {
+  sitewideLocalBusinessSchema,
+  aggregateRatingSchema,
+  buildServiceSchema,
+  buildFaqSchema,
+  buildBreadcrumbSchema,
+} from "@/lib/seo-schemas";
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://bookmelbournetaxi.com" },
-    { "@type": "ListItem", position: 2, name: "Melbourne Taxi CBD", item: "https://bookmelbournetaxi.com/melbourne-taxi-cbd" },
-  ],
-};
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home" },
+  { name: "Melbourne Taxi CBD", slug: "melbourne-taxi-cbd" },
+]);
+
+const serviceSchema = buildServiceSchema({
+  name: "Melbourne CBD Taxi Service",
+  description:
+    "Catch a taxi anywhere in Melbourne's Central Business District (CBD). 50+ taxi ranks at Flinders Street, Southern Cross, Crown, Federation Square and more. Metered fares from $4.20 flagfall, 24/7 availability, wheelchair-accessible options.",
+  slug: "melbourne-taxi-cbd",
+  serviceType: "City taxi service",
+  priceRange: "$8–$75 AUD",
+});
+
+const faqSchema = buildFaqSchema([
+  { q: "Can I hail a taxi anywhere in the Melbourne CBD?", a: "Yes, on most CBD streets — except tram-only sections of Swanston Street and Bourke Street Mall. Look for taxis with a lit rooftop sign indicating they are vacant." },
+  { q: "Is there a minimum fare in Melbourne CBD?", a: "There is no minimum fare beyond the $4.20 flagfall. A 1 km trip in light traffic typically costs $6–$8 AUD." },
+  { q: "Are tips expected in Melbourne taxis?", a: "No, tipping is not part of Australian culture. Many passengers round the fare up to the nearest dollar as a courtesy, but it is not expected." },
+  { q: "Can I share a taxi with strangers in the CBD at night?", a: "Yes — at official late-night Safe City Taxi Ranks (e.g. King Street, Flinders Street) marshals will often co-ordinate share-rides for passengers heading in the same direction, with the fare split between you." },
+]);
 
 const MelbourneTaxiCBD = () => (
   <SEOPageLayout
@@ -19,8 +39,9 @@ const MelbourneTaxiCBD = () => (
     metaDescription="Catch a taxi in Melbourne CBD: 50+ ranks at Flinders St, Southern Cross, Crown & Federation Square. Flagfall $4.20, $1.62/km. Late-night safe ranks & insider tips."
     slug="melbourne-taxi-cbd"
     bookLink={`https://www.getyourguide.com/melbourne-l169/airport-transfer-t1/?partner_id=${GYG}&utm_medium=online_publisher`}
-    jsonLd={[breadcrumbSchema]}
+    jsonLd={[sitewideLocalBusinessSchema, aggregateRatingSchema, serviceSchema, faqSchema, breadcrumbSchema]}
   >
+
     <section className="py-16 bg-background">
       <div className="container">
         <div className="grid md:grid-cols-3 gap-6 mb-14">
@@ -172,6 +193,7 @@ const MelbourneTaxiCBD = () => (
       subtitle="Skip-the-line tickets and guided tours of the city's best attractions, just a short taxi ride away."
       offers={["streetArt", "eureka", "river", "cityCard", "greatOceanRoad", "phillipIsland"]}
     />
+    <RelatedPages links={["airport", "maxi", "victoria", "howto", "calculator"]} />
   </SEOPageLayout>
 );
 

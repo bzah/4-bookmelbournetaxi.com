@@ -1,15 +1,27 @@
 import SEOPageLayout, { GYG } from "@/components/SEOPageLayout";
 import { Phone, Smartphone, MapPin, CheckCircle, Clock } from "lucide-react";
 import { AffiliateCards, InlineAffiliateBanner } from "@/components/AffiliateCards";
+import RelatedPages from "@/components/RelatedPages";
+import {
+  sitewideLocalBusinessSchema,
+  aggregateRatingSchema,
+  buildServiceSchema,
+  buildFaqSchema,
+  buildBreadcrumbSchema,
+} from "@/lib/seo-schemas";
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://bookmelbournetaxi.com" },
-    { "@type": "ListItem", position: 2, name: "How to Book a Taxi", item: "https://bookmelbournetaxi.com/how-to-book-taxi-melbourne" },
-  ],
-};
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home" },
+  { name: "How to Book a Taxi", slug: "how-to-book-taxi-melbourne" },
+]);
+
+const serviceSchema = buildServiceSchema({
+  name: "Book a Taxi in Melbourne — App, Phone, Rank or Online",
+  description:
+    "Step-by-step guide to booking a Melbourne taxi by app, phone, street hail, taxi rank or online — with 13CABS, Silver Top, Melbourne Combined and GM Cabs.",
+  slug: "how-to-book-taxi-melbourne",
+  serviceType: "Taxi booking guide",
+});
 
 const howToSchema = {
   "@context": "https://schema.org",
@@ -24,6 +36,14 @@ const howToSchema = {
   ],
 };
 
+const faqSchema = buildFaqSchema([
+  { q: "Is it cheaper to book a taxi by app or by phone?", a: "The fare is identical — Melbourne taxi fares are regulated by the Victorian Government and the metered rate doesn't change based on booking method. App bookings often skip the $2 phone-booking fee and offer fixed-quote options." },
+  { q: "How far in advance can I pre-book a Melbourne taxi?", a: "Up to 7 days in advance through 13CABS and Silver Top apps or websites. For corporate accounts, longer lead times are possible." },
+  { q: "Can I track my taxi driver in real time?", a: "Yes — both the 13CABS and Silver Top apps offer live GPS tracking, ETA updates, driver name and photo, and vehicle registration." },
+  { q: "What if my taxi is late?", a: "Use the app to check the driver's location. If significantly delayed, call the dispatcher and they'll either expedite the booking or assign a closer car at no extra cost." },
+  { q: "Are Melbourne taxis safer than rideshare?", a: "Both are regulated by the CPVV. Licensed taxis have CCTV, mandatory driver background checks, and a long-established complaints process. Late at night, official taxi ranks with marshals are generally considered the safest option." },
+]);
+
 const HowToBookTaxi = () => (
   <SEOPageLayout
     title="How to Book a Taxi in Melbourne"
@@ -32,8 +52,9 @@ const HowToBookTaxi = () => (
     metaDescription="Book a Melbourne taxi by app, phone, rank or online. Compare 13CABS & Silver Top, with tips for airport transfers, maxi cabs & wheelchair-accessible bookings."
     slug="how-to-book-taxi-melbourne"
     bookLink={`https://www.getyourguide.com/melbourne-l169/airport-transfer-t1/?partner_id=${GYG}&utm_medium=online_publisher`}
-    jsonLd={[breadcrumbSchema, howToSchema]}
+    jsonLd={[sitewideLocalBusinessSchema, aggregateRatingSchema, serviceSchema, howToSchema, faqSchema, breadcrumbSchema]}
   >
+
     <section className="py-16 bg-background">
       <div className="container">
         <div className="max-w-3xl mx-auto">
@@ -177,6 +198,7 @@ const HowToBookTaxi = () => (
       subtitle="Beyond taxis — these top-rated tours, transfers and attractions sell out fast. Reserve now, pay later."
       offers={["airportTransfer", "greatOceanRoad", "phillipIsland", "yarraValley", "streetArt", "eureka"]}
     />
+    <RelatedPages links={["airport", "maxi", "cbd", "victoria", "calculator"]} />
   </SEOPageLayout>
 );
 
