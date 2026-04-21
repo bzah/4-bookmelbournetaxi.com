@@ -68,7 +68,7 @@ const Index = () => (
       <RelatedPages
         title="Explore Our Melbourne Taxi Guides"
         subtitle="Trusted, in-depth guides for every Melbourne taxi journey."
-        links={["airport", "maxi", "cbd", "victoria", "howto", "calculator"]}
+        links={["hub", "airport", "maxi", "cbd", "victoria", "howto", "calculator"]}
       />
     </main>
     <Footer />
