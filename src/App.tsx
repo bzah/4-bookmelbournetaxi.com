@@ -18,6 +18,8 @@ import CookiePolicy from "./pages/CookiePolicy.tsx";
 import DMCA from "./pages/DMCA.tsx";
 import LegalNotice from "./pages/LegalNotice.tsx";
 import ParentsInfo from "./pages/ParentsInfo.tsx";
+import Blog from "./pages/Blog.tsx";
+import BlogPost from "./pages/BlogPost.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -44,6 +46,8 @@ const App = () => (
           <Route path="/dmca" element={<DMCA />} />
           <Route path="/legal-notice" element={<LegalNotice />} />
           <Route path="/parents-info" element={<ParentsInfo />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
