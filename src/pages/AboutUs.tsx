@@ -1,38 +1,16 @@
 import SEOPageLayout from "@/components/SEOPageLayout";
 import { MapPin, Users, Award, Heart } from "lucide-react";
+import RelatedPages from "@/components/RelatedPages";
+import {
+  sitewideLocalBusinessSchema,
+  aggregateRatingSchema,
+  buildBreadcrumbSchema,
+} from "@/lib/seo-schemas";
 
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "BookMelbourneTaxi.com",
-  url: "https://bookmelbournetaxi.com",
-  image: "https://bookmelbournetaxi.com/favicon.png",
-  description: "Melbourne's trusted taxi booking guide — fares, routes, airport transfers, maxi taxis, and tours across Victoria, Australia.",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Melbourne",
-    addressRegion: "VIC",
-    postalCode: "3000",
-    addressCountry: "AU",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: -37.8136,
-    longitude: 144.9631,
-  },
-  areaServed: {
-    "@type": "GeoCircle",
-    geoMidpoint: { "@type": "GeoCoordinates", latitude: -37.8136, longitude: 144.9631 },
-    geoRadius: "100000",
-  },
-  priceRange: "$$",
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    opens: "00:00",
-    closes: "23:59",
-  },
-};
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home" },
+  { name: "About Us", slug: "about" },
+]);
 
 const AboutUs = () => (
   <SEOPageLayout
@@ -41,7 +19,7 @@ const AboutUs = () => (
     metaTitle="About Us — BookMelbourneTaxi.com | Melbourne Taxi Guide"
     metaDescription="BookMelbourneTaxi.com is Melbourne's trusted resource for taxi fares, airport transfers, maxi taxis, tours, and transport tips across Victoria, Australia."
     slug="about"
-    jsonLd={[localBusinessSchema]}
+    jsonLd={[sitewideLocalBusinessSchema, aggregateRatingSchema, breadcrumbSchema]}
   >
     <section className="py-16 bg-background">
       <div className="container">
@@ -87,6 +65,11 @@ const AboutUs = () => (
         </div>
       </div>
     </section>
+    <RelatedPages
+      title="Popular Melbourne Taxi Guides"
+      subtitle="Hand-picked guides our visitors read most."
+      links={["airport", "maxi", "victoria", "cbd", "howto", "calculator"]}
+    />
   </SEOPageLayout>
 );
 
