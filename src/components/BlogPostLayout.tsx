@@ -108,6 +108,8 @@ const BlogPostLayout = ({ post, related }: BlogPostLayoutProps) => {
             <p className="text-lg md:text-xl font-body text-primary-foreground/80 leading-relaxed">
               {post.intro}
             </p>
+
+            <BookTaxiCTA variant="hero" />
           </div>
         </article>
 
@@ -125,6 +127,8 @@ const BlogPostLayout = ({ post, related }: BlogPostLayoutProps) => {
                 ))}
               </ul>
             </aside>
+
+            <BookTaxiCTA variant="inline" />
 
             {/* Body sections */}
             {post.sections.map((sec, i) => (
