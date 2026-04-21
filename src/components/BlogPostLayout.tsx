@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import RelatedPages from "@/components/RelatedPages";
+import BookTaxiCTA from "@/components/BookTaxiCTA";
 import {
   Accordion,
   AccordionContent,

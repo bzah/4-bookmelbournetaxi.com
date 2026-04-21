@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import RelatedPages from "@/components/RelatedPages";
+import BookTaxiCTA from "@/components/BookTaxiCTA";
 import { blogPosts } from "@/data/blog-posts";
 import {
   sitewideLocalBusinessSchema,
@@ -72,6 +73,7 @@ const Blog = () => (
             In-depth guides, fare breakdowns and insider tips for getting around Melbourne by taxi —
             updated for 2026.
           </p>
+          <BookTaxiCTA variant="hero" />
         </div>
       </section>
 
@@ -118,6 +120,8 @@ const Blog = () => (
               </Link>
             ))}
           </div>
+
+          <BookTaxiCTA />
         </div>
       </section>
 
