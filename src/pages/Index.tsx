@@ -5,6 +5,7 @@ import TaxiRoutesSection from "@/components/TaxiRoutesSection";
 import MelbourneMapSection from "@/components/MelbourneMapSection";
 import AttractionsSection from "@/components/AttractionsSection";
 import ToursSection from "@/components/ToursSection";
+import GetYourGuideSection from "@/components/GetYourGuideSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -62,6 +63,7 @@ const Index = () => (
       <MelbourneMapSection />
       <AttractionsSection />
       <ToursSection />
+      <GetYourGuideSection />
       <FAQSection />
       <RelatedPages
         title="Explore Our Melbourne Taxi Guides"
