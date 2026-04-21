@@ -192,18 +192,21 @@ const BlogPostLayout = ({ post, related }: BlogPostLayoutProps) => {
               </Accordion>
             </section>
 
-            {/* Related posts */}
+            {/* Related posts — auto-selected by shared route keywords + category */}
             {related.length > 0 && (
-              <section className="mt-12 pt-10 border-t border-border">
-                <h2 className="text-2xl font-heading font-bold text-foreground mb-5">
+              <section className="mt-12 pt-10 border-t border-border" aria-labelledby="related-heading">
+                <h2 id="related-heading" className="text-2xl font-heading font-bold text-foreground mb-1.5">
                   Continue reading
                 </h2>
-                <div className="grid sm:grid-cols-2 gap-4">
+                <p className="font-body text-sm text-muted-foreground mb-5">
+                  Hand-picked based on shared Melbourne routes &amp; topics.
+                </p>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {related.map((rp) => (
                     <Link
                       key={rp.slug}
                       to={`/blog/${rp.slug}`}
-                      className="group bg-card border border-border rounded-lg p-5 hover:border-primary hover:-translate-y-1 transition-all"
+                      className="group bg-card border border-border rounded-lg p-5 hover:border-primary hover:-translate-y-1 transition-all flex flex-col"
                     >
                       <span className="text-xs font-body font-semibold text-primary uppercase tracking-wide">
                         {rp.category}
