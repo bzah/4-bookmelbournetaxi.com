@@ -9,7 +9,7 @@ const BlogPost = () => {
 
   if (!post) return <NotFound />;
 
-  const related = getRelatedPosts(post.slug, 2);
+  const related = getRelatedPosts(post.slug, 3);
   return <BlogPostLayout post={post} related={related} />;
 };
 

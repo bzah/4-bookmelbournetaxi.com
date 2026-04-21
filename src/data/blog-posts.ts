@@ -571,5 +571,94 @@ export const blogPosts: BlogPost[] = [
 export const getPostBySlug = (slug: string): BlogPost | undefined =>
   blogPosts.find((post) => post.slug === slug);
 
-export const getRelatedPosts = (currentSlug: string, count = 3): BlogPost[] =>
-  blogPosts.filter((p) => p.slug !== currentSlug).slice(0, count);
+// ---------------------------------------------------------------------------
+// Smart related-post engine
+// ---------------------------------------------------------------------------
+// Scores every other post against the current one using:
+//   • Shared Melbourne route/keyword tokens (airport, st kilda, cbd, geelong…)
+//   • Shared category (Fares, Tips, Routes, Comparison, Booking)
+//   • Shared significant title words
+//   • Shared internal-link targets
+// Highest-scoring posts win; ties fall back to recency.
+// ---------------------------------------------------------------------------
+
+const ROUTE_TOKENS = [
+  "airport", "tullamarine", "mel", "cbd", "st kilda", "stkilda",
+  "geelong", "brighton", "richmond", "south yarra", "southbank",
+  "docklands", "carlton", "fitzroy", "mornington", "dandenong",
+  "frankston", "yarra valley", "great ocean road", "phillip island",
+  "uber", "rideshare", "maxi", "wheelchair", "wat", "accessible",
+  "fare", "fares", "cost", "price", "booking", "book", "night", "peak",
+];
+
+const STOPWORDS = new Set([
+  "the", "a", "an", "and", "or", "but", "for", "to", "of", "in", "on", "at",
+  "is", "are", "was", "were", "be", "by", "with", "from", "how", "what",
+  "when", "where", "why", "vs", "your", "you", "it", "this", "that",
+  "guide", "best", "2026",
+]);
+
+const tokenize = (text: string): string[] =>
+  text
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, " ")
+    .split(/\s+/)
+    .filter((t) => t.length > 2 && !STOPWORDS.has(t));
+
+const extractRouteTokens = (post: BlogPost): Set<string> => {
+  const haystack = `${post.title} ${post.intro} ${post.keywords.join(" ")}`.toLowerCase();
+  const found = new Set<string>();
+  for (const token of ROUTE_TOKENS) {
+    if (haystack.includes(token)) found.add(token);
+  }
+  return found;
+};
+
+const scoreRelatedness = (current: BlogPost, candidate: BlogPost): number => {
+  let score = 0;
+
+  // Shared Melbourne route tokens — strongest signal (5 pts each).
+  const currentRoutes = extractRouteTokens(current);
+  const candidateRoutes = extractRouteTokens(candidate);
+  for (const r of currentRoutes) if (candidateRoutes.has(r)) score += 5;
+
+  // Same category (4 pts).
+  if (current.category === candidate.category) score += 4;
+
+  // Shared keyword phrases (3 pts each).
+  const currentKw = new Set(current.keywords.map((k) => k.toLowerCase()));
+  for (const k of candidate.keywords) {
+    if (currentKw.has(k.toLowerCase())) score += 3;
+  }
+
+  // Shared significant title tokens (1 pt each).
+  const currentTitleTokens = new Set(tokenize(current.title));
+  for (const t of tokenize(candidate.title)) {
+    if (currentTitleTokens.has(t)) score += 1;
+  }
+
+  // Shared internal-link targets (2 pts each).
+  const currentInternal = new Set(current.relatedInternal);
+  for (const i of candidate.relatedInternal) {
+    if (currentInternal.has(i)) score += 2;
+  }
+
+  return score;
+};
+
+export const getRelatedPosts = (currentSlug: string, count = 3): BlogPost[] => {
+  const current = getPostBySlug(currentSlug);
+  if (!current) return blogPosts.slice(0, count);
+
+  const scored = blogPosts
+    .filter((p) => p.slug !== currentSlug)
+    .map((p) => ({
+      post: p,
+      score: scoreRelatedness(current, p),
+      published: new Date(p.publishedAt).getTime(),
+    }))
+    .sort((a, b) => b.score - a.score || b.published - a.published);
+
+  return scored.slice(0, count).map((s) => s.post);
+};
+
