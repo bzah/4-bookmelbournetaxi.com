@@ -4,6 +4,12 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import RelatedPages from "@/components/RelatedPages";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { BlogPost } from "@/data/blog-posts";
 import {
   sitewideLocalBusinessSchema,
@@ -143,19 +149,47 @@ const BlogPostLayout = ({ post, related }: BlogPostLayoutProps) => {
               </section>
             ))}
 
-            {/* FAQs */}
-            <section className="mt-12 pt-10 border-t border-border">
-              <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-6">
+            {/* FAQs — native accordion + JSON-LD FAQPage schema (emitted in <head>) */}
+            <section
+              className="mt-12 pt-10 border-t border-border"
+              aria-labelledby="faq-heading"
+              itemScope
+              itemType="https://schema.org/FAQPage"
+            >
+              <h2
+                id="faq-heading"
+                className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-6"
+              >
                 Frequently Asked Questions
               </h2>
-              <div className="space-y-5">
+              <Accordion type="single" collapsible className="w-full space-y-3">
                 {post.faqs.map((f, i) => (
-                  <div key={i} className="bg-card border border-border rounded-lg p-5">
-                    <h3 className="font-heading font-bold text-foreground mb-2">{f.q}</h3>
-                    <p className="font-body text-foreground/75 leading-relaxed">{f.a}</p>
-                  </div>
+                  <AccordionItem
+                    key={i}
+                    value={`faq-${i}`}
+                    className="bg-card border border-border rounded-lg px-5 border-b"
+                    itemScope
+                    itemProp="mainEntity"
+                    itemType="https://schema.org/Question"
+                  >
+                    <AccordionTrigger className="text-left font-heading font-bold text-foreground hover:no-underline">
+                      <span itemProp="name">{f.q}</span>
+                    </AccordionTrigger>
+                    <AccordionContent
+                      itemScope
+                      itemProp="acceptedAnswer"
+                      itemType="https://schema.org/Answer"
+                    >
+                      <div
+                        itemProp="text"
+                        className="font-body text-foreground/75 leading-relaxed"
+                      >
+                        {f.a}
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
                 ))}
-              </div>
+              </Accordion>
             </section>
 
             {/* Related posts */}
