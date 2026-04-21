@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import RelatedPages from "@/components/RelatedPages";
+import BookTaxiCTA from "@/components/BookTaxiCTA";
 import {
   Accordion,
   AccordionContent,
@@ -107,6 +108,8 @@ const BlogPostLayout = ({ post, related }: BlogPostLayoutProps) => {
             <p className="text-lg md:text-xl font-body text-primary-foreground/80 leading-relaxed">
               {post.intro}
             </p>
+
+            <BookTaxiCTA variant="hero" />
           </div>
         </article>
 
@@ -124,6 +127,8 @@ const BlogPostLayout = ({ post, related }: BlogPostLayoutProps) => {
                 ))}
               </ul>
             </aside>
+
+            <BookTaxiCTA variant="inline" />
 
             {/* Body sections */}
             {post.sections.map((sec, i) => (
@@ -148,6 +153,11 @@ const BlogPostLayout = ({ post, related }: BlogPostLayoutProps) => {
                 )}
               </section>
             ))}
+
+            <BookTaxiCTA
+              heading="Now you know the fares — book your ride"
+              subheading="Pre-book online for a fixed price with free cancellation, or get an instant fare estimate from our calculator."
+            />
 
             {/* FAQs — native accordion + JSON-LD FAQPage schema (emitted in <head>) */}
             <section
