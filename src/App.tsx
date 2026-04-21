@@ -10,6 +10,7 @@ import TaxisMelbourneVictoria from "./pages/TaxisMelbourneVictoria.tsx";
 import MelbourneTaxiCBD from "./pages/MelbourneTaxiCBD.tsx";
 import HowToBookTaxi from "./pages/HowToBookTaxi.tsx";
 import TaxiFareCalculator from "./pages/TaxiFareCalculator.tsx";
+import TaxiMelbourneHub from "./pages/TaxiMelbourneHub.tsx";
 import AboutUs from "./pages/AboutUs.tsx";
 import ContactUs from "./pages/ContactUs.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/melbourne-taxi-cbd" element={<MelbourneTaxiCBD />} />
           <Route path="/how-to-book-taxi-melbourne" element={<HowToBookTaxi />} />
           <Route path="/taxi-fare-calculator-melbourne" element={<TaxiFareCalculator />} />
+          <Route path="/taxi-melbourne" element={<TaxiMelbourneHub />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
