@@ -157,6 +157,7 @@ export const blogPosts: BlogPost[] = [
       },
     ],
     relatedInternal: ["airport", "maxi", "calculator", "cbd", "howto"],
+    route: { pickup: "Melbourne Airport (MEL)", dropoff: "St Kilda" },
   },
   {
     slug: "best-time-to-book-taxi-melbourne",
@@ -372,6 +373,7 @@ export const blogPosts: BlogPost[] = [
       },
     ],
     relatedInternal: ["airport", "calculator", "cbd", "howto", "victoria"],
+    route: { pickup: "Melbourne Airport (MEL)", dropoff: "Geelong" },
   },
   {
     slug: "melbourne-airport-to-geelong-taxi-cost",
