@@ -35,7 +35,7 @@ const BookTaxiCTA = ({
           className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-primary text-primary-foreground font-body font-semibold hover:opacity-90 transition-opacity"
         >
           <Phone className="w-4 h-4" />
-          Book a taxi
+          Book Melbourne airport taxi
           <ExternalLink className="w-3.5 h-3.5 opacity-70" />
         </a>
         <Link
