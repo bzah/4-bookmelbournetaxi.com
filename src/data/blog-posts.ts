@@ -12,6 +12,11 @@ export interface BlogFaq {
   a: string;
 }
 
+export interface BlogRoute {
+  pickup: string;
+  dropoff: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string; // H1 + og:title
@@ -29,6 +34,8 @@ export interface BlogPost {
   sections: BlogSection[];
   faqs: BlogFaq[];
   relatedInternal: ("airport" | "maxi" | "victoria" | "cbd" | "howto" | "calculator")[];
+  /** Optional route — when present, blog post pre-fills the quote form. */
+  route?: BlogRoute;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -150,6 +157,7 @@ export const blogPosts: BlogPost[] = [
       },
     ],
     relatedInternal: ["airport", "maxi", "calculator", "cbd", "howto"],
+    route: { pickup: "Melbourne Airport (MEL)", dropoff: "St Kilda" },
   },
   {
     slug: "best-time-to-book-taxi-melbourne",
@@ -365,6 +373,7 @@ export const blogPosts: BlogPost[] = [
       },
     ],
     relatedInternal: ["airport", "calculator", "cbd", "howto", "victoria"],
+    route: { pickup: "Melbourne Airport (MEL)", dropoff: "Geelong" },
   },
   {
     slug: "melbourne-airport-to-geelong-taxi-cost",
