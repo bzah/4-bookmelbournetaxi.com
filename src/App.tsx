@@ -10,6 +10,7 @@ import TaxisMelbourneVictoria from "./pages/TaxisMelbourneVictoria.tsx";
 import MelbourneTaxiCBD from "./pages/MelbourneTaxiCBD.tsx";
 import HowToBookTaxi from "./pages/HowToBookTaxi.tsx";
 import TaxiFareCalculator from "./pages/TaxiFareCalculator.tsx";
+import TaxiMelbourneHub from "./pages/TaxiMelbourneHub.tsx";
 import AboutUs from "./pages/AboutUs.tsx";
 import ContactUs from "./pages/ContactUs.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
