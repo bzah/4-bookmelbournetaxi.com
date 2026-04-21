@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "/" },
+  { label: "Taxi Hub", href: "/taxi-melbourne" },
   { label: "Taxi Routes", href: "/#taxi-routes" },
   { label: "Attractions", href: "/#attractions" },
   { label: "Tours", href: "/#tours" },

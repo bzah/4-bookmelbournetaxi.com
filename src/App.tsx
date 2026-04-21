@@ -38,6 +38,7 @@ const App = () => (
           <Route path="/melbourne-taxi-cbd" element={<MelbourneTaxiCBD />} />
           <Route path="/how-to-book-taxi-melbourne" element={<HowToBookTaxi />} />
           <Route path="/taxi-fare-calculator-melbourne" element={<TaxiFareCalculator />} />
+          <Route path="/taxi-melbourne" element={<TaxiMelbourneHub />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />

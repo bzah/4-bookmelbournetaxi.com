@@ -9,6 +9,11 @@ export interface RelatedLink {
 
 /** Sitewide directory of internal pages — used to build contextual link blocks. */
 export const allInternalLinks: Record<string, RelatedLink> = {
+  hub: {
+    to: "/taxi-melbourne",
+    title: "Taxi Melbourne — Complete Hub",
+    desc: "All Melbourne taxi guides in one place: routes, fares, comparisons &amp; booking tips.",
+  },
   airport: {
     to: "/taxi-melbourne-airport-to-cbd",
     title: "Melbourne Airport to CBD Taxi",
