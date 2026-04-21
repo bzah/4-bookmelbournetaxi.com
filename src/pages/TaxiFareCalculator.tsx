@@ -61,7 +61,7 @@ const TaxiFareCalculator = () => {
         <div className="container">
           <div className="max-w-3xl mx-auto">
             {/* Calculator */}
-            <div className="bg-card border border-border rounded-lg p-8 mb-12">
+            <div id="calculator" className="bg-card border border-border rounded-lg p-8 mb-12 scroll-mt-24">
               <div className="flex items-center gap-3 mb-6">
                 <Calculator className="w-7 h-7 text-primary" />
                 <h2 className="text-2xl font-heading font-bold text-foreground">Fare Estimator</h2>
