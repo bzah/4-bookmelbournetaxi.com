@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import RelatedPages from "@/components/RelatedPages";
 import BookTaxiCTA from "@/components/BookTaxiCTA";
+import StickyBlogCTA from "@/components/StickyBlogCTA";
 import {
   Accordion,
   AccordionContent,
