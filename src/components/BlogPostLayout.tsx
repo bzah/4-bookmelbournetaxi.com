@@ -131,7 +131,15 @@ const BlogPostLayout = ({ post, related }: BlogPostLayoutProps) => {
               </ul>
             </aside>
 
-            <BookTaxiCTA variant="inline" />
+            {post.route ? (
+              <QuoteForm
+                pickup={post.route.pickup}
+                dropoff={post.route.dropoff}
+                heading={`Get a quote: ${post.route.pickup} → ${post.route.dropoff}`}
+              />
+            ) : (
+              <BookTaxiCTA variant="inline" />
+            )}
 
             {/* Body sections */}
             {post.sections.map((sec, i) => (
