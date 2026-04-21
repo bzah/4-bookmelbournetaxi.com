@@ -200,6 +200,14 @@ const BlogPostLayout = ({ post, related }: BlogPostLayoutProps) => {
                   </AccordionItem>
                 ))}
               </Accordion>
+
+              {/* Book your taxi CTA inside FAQ section */}
+              <div className="mt-8 pt-6 border-t border-border">
+                <BookTaxiCTA
+                  heading="Ready to book your taxi?"
+                  subheading="Get an instant quote or pre-book your ride now."
+                />
+              </div>
             </section>
 
             {/* Related posts — auto-selected by shared route keywords + category */}
