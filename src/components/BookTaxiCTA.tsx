@@ -59,7 +59,7 @@ const BookTaxiCTA = ({
           className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-primary text-primary-foreground font-body font-semibold text-base hover:opacity-90 transition-opacity"
         >
           <Phone className="w-4 h-4" />
-          Book a taxi
+          Book Melbourne airport taxi
           <ExternalLink className="w-3.5 h-3.5 opacity-70" />
         </a>
         <Link
@@ -67,7 +67,7 @@ const BookTaxiCTA = ({
           className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/30 text-primary-foreground font-body font-semibold text-base hover:bg-primary-foreground/15 transition-colors"
         >
           <Calculator className="w-4 h-4" />
-          Get a quote
+          Get fare quote online
         </Link>
       </div>
     );
