@@ -69,6 +69,7 @@ const BlogPostLayout = ({ post, related }: BlogPostLayoutProps) => {
         jsonLd={[articleSchema, sitewideLocalBusinessSchema, breadcrumbSchema, faqSchema]}
       />
       <Navbar />
+      <StickyBlogCTA />
       <main>
         <article className="pt-24 pb-16 bg-navy-gradient">
           <div className="container max-w-4xl">
