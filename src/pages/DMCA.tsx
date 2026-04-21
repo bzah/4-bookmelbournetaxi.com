@@ -1,4 +1,13 @@
 import SEOPageLayout from "@/components/SEOPageLayout";
+import {
+  sitewideLocalBusinessSchema,
+  buildBreadcrumbSchema,
+} from "@/lib/seo-schemas";
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home" },
+  { name: "DMCA Policy", slug: "dmca" },
+]);
 
 const DMCA = () => (
   <SEOPageLayout
@@ -7,6 +16,7 @@ const DMCA = () => (
     metaTitle="DMCA Policy — BookMelbourneTaxi.com"
     metaDescription="BookMelbourneTaxi.com DMCA policy and copyright takedown procedures. Learn how to report copyright infringement and submit a valid notice to remove infringing content."
     slug="dmca"
+    jsonLd={[sitewideLocalBusinessSchema, breadcrumbSchema]}
   >
     <section className="py-16 bg-background">
       <div className="container">

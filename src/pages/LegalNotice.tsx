@@ -1,4 +1,13 @@
 import SEOPageLayout from "@/components/SEOPageLayout";
+import {
+  sitewideLocalBusinessSchema,
+  buildBreadcrumbSchema,
+} from "@/lib/seo-schemas";
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home" },
+  { name: "Legal Notice", slug: "legal-notice" },
+]);
 
 const LegalNotice = () => (
   <SEOPageLayout
@@ -7,6 +16,7 @@ const LegalNotice = () => (
     metaTitle="Legal Notice — BookMelbourneTaxi.com"
     metaDescription="Legal notice and disclaimers for BookMelbourneTaxi.com. Information about our website operator, liability, and applicable laws."
     slug="legal-notice"
+    jsonLd={[sitewideLocalBusinessSchema, breadcrumbSchema]}
   >
     <section className="py-16 bg-background">
       <div className="container">

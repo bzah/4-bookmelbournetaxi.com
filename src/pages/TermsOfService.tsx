@@ -1,4 +1,13 @@
 import SEOPageLayout from "@/components/SEOPageLayout";
+import {
+  sitewideLocalBusinessSchema,
+  buildBreadcrumbSchema,
+} from "@/lib/seo-schemas";
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home" },
+  { name: "Terms of Service", slug: "terms-of-service" },
+]);
 
 const TermsOfService = () => (
   <SEOPageLayout
@@ -7,6 +16,7 @@ const TermsOfService = () => (
     metaTitle="Terms of Service — BookMelbourneTaxi.com"
     metaDescription="Read the terms of service for BookMelbourneTaxi.com. Understand your rights and responsibilities when using our Melbourne taxi guide and booking resources."
     slug="terms-of-service"
+    jsonLd={[sitewideLocalBusinessSchema, breadcrumbSchema]}
   >
     <section className="py-16 bg-background">
       <div className="container">

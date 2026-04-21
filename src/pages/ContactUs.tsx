@@ -155,6 +155,11 @@ const ContactUs = () => {
         </div>
       </div>
     </section>
+    <RelatedPages
+      title="While You're Here — Popular Guides"
+      subtitle="Browse our most-read Melbourne taxi resources."
+      links={["airport", "maxi", "cbd", "victoria", "calculator", "howto"]}
+    />
   </SEOPageLayout>
   );
 };

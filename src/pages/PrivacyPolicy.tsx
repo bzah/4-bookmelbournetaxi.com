@@ -1,4 +1,13 @@
 import SEOPageLayout from "@/components/SEOPageLayout";
+import {
+  sitewideLocalBusinessSchema,
+  buildBreadcrumbSchema,
+} from "@/lib/seo-schemas";
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home" },
+  { name: "Privacy Policy", slug: "privacy-policy" },
+]);
 
 const PrivacyPolicy = () => (
   <SEOPageLayout
@@ -7,6 +16,7 @@ const PrivacyPolicy = () => (
     metaTitle="Privacy Policy — BookMelbourneTaxi.com"
     metaDescription="Read BookMelbourneTaxi.com's privacy policy. Learn how we collect, use, and protect your personal data when you visit our Melbourne taxi guide website."
     slug="privacy-policy"
+    jsonLd={[sitewideLocalBusinessSchema, breadcrumbSchema]}
   >
     <section className="py-16 bg-background">
       <div className="container">
